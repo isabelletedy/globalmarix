@@ -1,104 +1,110 @@
 <!doctype html>
 <html lang="de">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mister Spex Global Career Framework</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
-  <style>
-        body {
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        #root {
-            min-height: 100%;
-        }
-        
-        .prose {
-            max-width: none;
-        }
-        
-        .prose ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin: 0.5rem 0;
-        }
-        
-        .prose li {
-            margin: 0.25rem 0;
-        }
-        
-        .prose p {
-            margin: 0.75rem 0;
-        }
-        
-        .prose h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem 0;
-            color: #000000;
-        }
-        
-        .prose h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin: 0.75rem 0 0.5rem 0;
-            color: #000000;
-        }
-        
-        .smooth-transition {
-            transition: all 0.3s ease;
-        }
-        
-        button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        select {
-            cursor: pointer;
-        }
-        
-        select:focus {
-            outline: 2px solid #424D35;
-            outline-offset: 2px;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Spex Global Career Framework</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #root {
+        min-height: 100%;
+      }
+
+      .prose {
+        max-width: none;
+      }
+
+      .prose ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin: 0.5rem 0;
+      }
+
+      .prose li {
+        margin: 0.25rem 0;
+      }
+
+      .prose p {
+        margin: 0.75rem 0;
+      }
+
+      .prose h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 1rem 0 0.5rem 0;
+        color: #000000;
+      }
+
+      .prose h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0.75rem 0 0.5rem 0;
+        color: #000000;
+      }
+
+      .smooth-transition {
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      select:focus {
+        outline: 2px solid #424D35;
+        outline-offset: 2px;
+      }
+
+      /* Print styles */
+      @media print {
+        button {
+          display: none;
         }
 
-        /* Print styles */
-        @media print {
-            button {
-                display: none;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            .no-print {
-                display: none;
-            }
+        nav {
+          display: none;
         }
+
+        .no-print {
+          display: none;
+        }
+      }
     </style>
-  <style>@view-transition { navigation: auto; }</style>
- <!-- <script src="_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="_sdk/element_sdk.js" type="text/javascript"></script> -->
- </head>
- <body>
-  <div id="root"></div>
-  <script>
-        // ===== Career Matrix Data =====
-        const CAREER_DATA = {
-            '00': {
-                'Execution & Impact': {
-                    en: `<ul>
+
+    <style>@view-transition { navigation: auto; }</style>
+
+    <!-- <script src="_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="_sdk/element_sdk.js" type="text/javascript"></script> -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script>
+      // ===== Career Matrix Data =====
+      const CAREER_DATA = {
+        '00': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Executes clearly defined, simple tasks as instructed, under close supervision.</li>
 <li>By consistently completing assigned tasks with care and accuracy, employees at this level help maintain the team's workflow and reduce errors, creating the foundation for reliable operations that support broader company goals.</li>
 <li>Works carefully and reliably, strictly following given guidelines and checklists.</li>
@@ -106,7 +112,7 @@
 <li>Requires clear instructions and frequent guidance.</li>
 <li>Takes very limited initiative or responsibility beyond assigned tasks.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Führt klar definierte, einfache Aufgaben wie angewiesen unter enger Aufsicht aus.</li>
 <li>Durch die konsequente, sorgfältige und genaue Erledigung der zugewiesenen Aufgaben tragen Mitarbeitende auf diesem Level dazu bei, den Arbeitsfluss im Team aufrechtzuerhalten und Fehler zu reduzieren – und schaffen so die Grundlage für verlässliche Abläufe, die die übergeordneten Unternehmensziele unterstützen.</li>
 <li>Arbeitet sorgfältig und verlässlich und hält sich strikt an voregebene Richtlinien und Checklisten.</li>
@@ -114,50 +120,51 @@
 <li>Benötigt klare Anweisungen und häufige Anleitung.</li>
 <li>Zeigt nur sehr begrenzte Eigeninitiative oder Verantwortungsübernahme über die zugewiesenen Aufgaben hinaus.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Builds foundational knowledge in their area of work, learning basic procedures and tools.</li>
 <li>Actively uses instructions, training materials, and feedback from others to improve skills.</li>
 <li>Understands fundamental workflows and company policies at a basic level.</li>
 <li>Gradually develops a basic understanding of the team’s tools and systems through practice and repetition</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Baut grundlegendes Wissen im eigenen Arbeitsbereich auf und lernt grundlegende Verfahren und Werkzeuge kennen.</li>
 <li>Nutzt aktiv Anleitungen, Schulungsmaterialien und Feedback von anderen, um Fähigkeiten zu verbessern.</li>
 <li>Versteht grundlegende Arbeitsabläufe und Unternehmensrichtlinien auf einem Basisniveau.</li>
 <li>Entwickelt durch Übung und Wiederholung nach und nach ein grundlegendes Verständnis für die Werkzeuge und Systeme des Teams.</li>
 <li>Kommuniziert höflich und klar mit Teammitgliedern unter Einhaltung grundlegender professioneller Umgangsformen.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Communicates politely and clearly with team members, following basic professional etiquette.</li>
 <li>Asks clarifying questions when something is unclear, showing willingness to learn.</li>
 <li>Adheres to team communication rules (e.g. meeting etiquette, response times) and respects the hierarchy in interactions.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Kommuniziert höflich und klar mit Teammitgliedern unter Einhaltung grundlegender professioneller Umgangsformen.</li>
 <li>Stellt klärende Fragen, wenn etwas nicht klar ist, und zeigt damit Lernbereitschaft.</li>
-<li>Hält sich an die Kommunikationsregeln des Teams (z. B. Meeting-Etikette, Antwortzeiten) und respektiert die Hierarchie in der Zusammenarbeit.</li>
+<li>Hält sich an die Kommunikationsregeln des Teams (z. B. Meeting-Etikette, Antwortzeiten) und respektiert die Hierarchie in der Zusammenarbeit.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Focuses on completing assigned tasks as directed without suggesting changes or new ideas.</li>
 <li>Occasionally begins to recognize opportunities for process improvement, typically with guidance or support.</li>
 <li>Does not contribute to strategic planning or creative problem-solving at this stage; primarily concerned with understanding and performing their immediate duties.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Konzentriert sich darauf, zugewiesene Aufgaben wie vorgegeben zu erledigen, ohne Änderungen oder neue Ideen vorzuschlagen.</li>
 <li>Erkennt gelegentlich Verbesserungspotenziale in Prozessen – meist mit Anleitung oder Unterstützung.</li>
 <li>Leistet in dieser Phase keinen Beitrag zur strategischen Planung oder kreativen Problemlösung; der Fokus liegt auf dem Verständnis und der Ausführung der unmittelbaren Aufgaben.</li>
 </ul>`
-                }
-            },
-            '01': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '01': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Handles routine tasks largely independently, needing only occasional check-ins.</li>
 <li>By completing basic tasks carefully and with increasing independence, employees at this level help reduce workload for others, allowing the team to stay focused and organized in pursuing its goals.</li>
 <li>Consistently meets agreed-upon deadlines and quality standards for their work.</li>
@@ -165,7 +172,7 @@
 <li>Proactively asks questions or seeks help if instructions are unclear, rather than waiting for direction</li>
 <li>Takes responsibility for clearly defined work packages or assignments, ensuring they are completed as expected</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Erledigt Routinetätigkeiten weitgehend selbstständig und benötigt nur gelegentlich Rücksprache.</li>
 <li>Durch sorgfältige und zunehmend eigenständige Ausführung grundlegender Aufgaben tragen Mitarbeitende auf diesem Niveau dazu bei, die Arbeitsbelastung anderer zu verringern und ermöglichen dem Team, fokussiert und organisiert seine Ziele zu verfolgen.</li>
 <li>Hält vereinbarte Fristen und Qualitätsstandards für die eigene Arbeit konsequent ein.</li>
@@ -173,55 +180,56 @@
 <li>Stellt proaktiv Fragen oder holt Unterstützung ein, wenn Anweisungen unklar sind, anstatt passiv auf weitere Vorgaben zu warten.</li>
 <li>Übernimmt Verantwortung für klar definierte Arbeitspakete oder Aufgaben und sorgt dafür, dass diese wie erwartet abgeschlossen werden.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Actively acquires specific knowledge and skills related to their job, expanding beyond the basics.</li>
 <li>Seeks explanations for processes or content they don’t understand, demonstrating curiosity.</li>
-<li>Recognizes initial connections in their work environment, eg.  how their tasks affect teammates or other departments.</li>
+<li>Recognizes initial connections in their work environment, eg.  how their tasks affect teammates or other departments.</li>
 <li>Shows high willingness to learn new tools or methods and displays curiosity by experimenting under guidance.</li>
-<li>Learns from failure and prevents making the same mistake twice.</li> 
+<li>Learns from failure and prevents making the same mistake twice.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Erwirbt aktiv spezifisches Wissen und Fähigkeiten, die über die Grundlagen seiner Tätigkeit hinausgehen.</li>
 <li>Sucht Erklärungen für Prozesse oder Inhalte, die sie nicht verstehen, und zeigt dabei Neugier.</li>
-<li>Erkennt erste Zusammenhänge in ihrem Arbeitsumfeld, z. B. wie ihre Aufgaben Kolleg:innen oder andere Abteilungen beeinflussen.</li>
+<li>Erkennt erste Zusammenhänge in ihrem Arbeitsumfeld, z. B. wie ihre Aufgaben Kolleg:innen oder andere Abteilungen beeinflussen.</li>
 <li>Zeigt hohe Bereitschaft, neue Tools oder Methoden zu erlernen, und experimentiert neugierig unter Anleitung.</li>
 <li>Lernt aus Fehlern und vermeidet es, denselben Fehler zweimal zu machen.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Participates in team discussions and information exchange actively, sharing updates and asking for input.</li>
 <li>Builds initial working relationships with direct colleagues, beginning to network within the team.</li>
 <li>Provides basic, constructive feedback to peers and openly accepts feedback on their own work without defensiveness.</li>
 <li>Communicates needs or issues to the team lead clearly, helping to prevent misunderstandings</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Beteiligt sich aktiv an Teamdiskussionen und am Informationsaustausch, indem Updates geteilt und Rückmeldungen eingeholt werden.</li>
 <li>Knüpft erste Arbeitsbeziehungen zu direkten Kolleg:innen und beginnt, sich innerhalb des Teams zu vernetzen.</li>
 <li>Gibt grundlegendes, konstruktives Feedback an Kolleg:innen und nimmt Rückmeldungen zur eigenen Arbeit offen und ohne Abwehrhaltung an.</li>
 <li>Kommuniziert Bedürfnisse oder Probleme klar an die Teamleitung, um Missverständnisse zu vermeiden.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Notices first opportunities for improvement in their own workflows and suggests small changes.</li>
 <li>Shares these improvement ideas or suggestions with the team, though ideas are usually focused on day-to-day operations.</li>
 <li>Thinks in terms of immediate tasks and operational details rather than broader strategy, focusing on “how” to get things done efficiently.</li>
 <li>Demonstrates awareness of team goals and how their work contributes to shared success by completing tasks that support team priorities and enable others to focus on their responsibilities.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Erkennt erste Verbesserungsmöglichkeiten in den eigenen Arbeitsabläufen und schlägt kleinere Änderungen vor.</li>
 <li>Teilt diese Verbesserungsvorschläge oder Ideen mit dem Team, wobei der Fokus meist auf dem täglichen Betrieb liegt.</li>
 <li>Denkt in Bezug auf unmittelbare Aufgaben und operative Details, statt übergeordnete Strategien – mit dem Schwerpunkt darauf, „wie“ Dinge effizient erledigt werden können.</li>
 <li>Zeigt Bewusstsein für die Ziele des Teams und dafür, wie die eigene Arbeit zum gemeinsamen Erfolg beiträgt, indem Aufgaben erledigt werden, die Teamprioritäten unterstützen und anderen ermöglichen, sich auf ihre Verantwortlichkeiten zu konzentrieren.</li>
 </ul>`
-                }
-            },
-            '02': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '02': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Handles tasks of moderate complexity independently, planning out the steps and executing them with minimal supervision.</li>
 <li>By independently managing complex tasks and adressing common issues, employees at this level actively contribute to team reliability and ensure consistent progress toward team and company objectives.</li>
 <li>Organizes and prioritizes their work effectively, creating their own work plans or checklists for assignments.</li>
@@ -229,7 +237,7 @@
 <li>Recognizes process or workflow problems in their area and brings forward possible solutions to address them.</li>
 <li>Demonstrates accountability for their own results – if issues arise in their work, they own the problem and work to fix it.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Bearbeitet Aufgaben mittlerer Komplexität eigenständig, plant die einzelnen Schritte und führt sie mit minimaler Aufsicht aus.</li>
 <li>Durch das eigenständige Management solcher Aufgaben und das Lösen gängiger Probleme tragen Mitarbeitende auf dieser Ebene aktiv zur Zuverlässigkeit des Teams bei und sorgen für kontinuierlichen Fortschritt in Richtung der Team- und Unternehmensziele.</li>
 <li>Organisiert und priorisiert die eigene Arbeit effektiv, erstellt eigene Arbeitspläne oder Checklisten für Aufgaben.</li>
@@ -237,55 +245,56 @@
 <li>Erkennt Probleme in Prozessen oder Abläufen im eigenen Arbeitsbereich und bringt mögliche Lösungen zur Sprache.</li>
 <li>Zeigt Verantwortungsbewusstsein für die eigenen Ergebnisse – bei auftretenden Problemen wird die Verantwortung übernommen und aktiv an deren Lösung gearbeitet.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Possesses solid knowledge of their discipline or function and is viewed as competent in their role’s fundamentals.</li>
 <li>Seeks learning opportunities to begin developing true functional expertise and keeps their knowledge up-to-date through self-directed learning (e.g. reading relevant materials, taking courses); applies new learnings to their work.</li>
 <li>Supports teammates by answering questions and sharing know-how in areas where they have expertise.</li>
 <li>Uses their growing expertise to improve team processes or solve small problems, not just for their own benefit but to help others work better as well</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Verfügt über fundiertes Wissen in ihrer Disziplin oder Funktion und wird als kompetent in den Grundlagen ihrer Rolle angesehen.</li>
-<li>Sucht aktiv nach Lernmöglichkeiten, um echte fachliche Expertise zu entwickeln, und hält ihr Wissen durch selbstgesteuertes Lernen (z. B. Lesen relevanter Materialien, Teilnahme an Kursen) aktuell; wendet neue Erkenntnisse in ihrer Arbeit an.</li>
+<li>Sucht aktiv nach Lernmöglichkeiten, um echte fachliche Expertise zu entwickeln, und hält ihr Wissen durch selbstgesteuertes Lernen (z. B. Lesen relevanter Materialien, Teilnahme an Kursen) aktuell; wendet neue Erkenntnisse in ihrer Arbeit an.</li>
 <li>Unterstützt Teammitglieder, indem sie Fragen beantwortet und ihr Wissen in Bereichen teilt, in denen sie Expertise besitzt.</li>
 <li>Nutzt ihr wachsendes Fachwissen, um Teamprozesse zu verbessern oder kleinere Probleme zu lösen – nicht nur zu ihrem eigenen Vorteil, sondern auch, um anderen die Arbeit zu erleichtern</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Communicates confidently with colleagues and basic stakeholders (e.g. cross-functional teams  or customers), adapting their message to the audience as needed.</li>
 <li>Communicates plans and results clearly and concisely, both in writing and verbally.</li>
 <li>Actively collaborates with other departments on interdependent tasks, showing an understanding of others’ needs and timelines.</li>
 <li>Spots minor interpersonal or workflow conflicts early on and addresses them constructively (such as clearing up misunderstandings between team members)</li>
 <li>Always assumes the best intent in others and engages with compassion and empathy.</li>
 </ul>`,
-                    de: `<ul>
-<li>Kommuniziert selbstbewusst mit Kolleg:innen und grundlegenden Stakeholdern (z. B. bereichsübergreifenden Teams oder Kund:innen) und passt die Botschaft bei Bedarf an das Publikum an.</li>
+            de: `<ul>
+<li>Kommuniziert selbstbewusst mit Kolleg:innen und grundlegenden Stakeholdern (z. B. bereichsübergreifenden Teams oder Kund:innen) und passt die Botschaft bei Bedarf an das Publikum an.</li>
 <li>Kommuniziert Pläne und Ergebnisse klar und präzise, sowohl schriftlich als auch mündlich.</li>
 <li>Arbeitet aktiv mit anderen Abteilungen an voneinander abhängigen Aufgaben zusammen und zeigt dabei Verständnis für deren Bedürfnisse und Zeitpläne.</li>
-<li>Erkennt kleinere zwischenmenschliche oder prozessbezogene Konflikte frühzeitig und geht konstruktiv damit um (z. B. durch das Klären von Missverständnissen im Team)</li>
+<li>Erkennt kleinere zwischenmenschliche oder prozessbezogene Konflikte frühzeitig und geht konstruktiv damit um (z. B. durch das Klären von Missverständnissen im Team)</li>
 <li>Geht stets von guter Absicht bei anderen aus und begegnet ihnen mit Mitgefühl und Empathie</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Actively contributes ideas for improvement, not just pointing out issues but proposing possible solutions or new approaches within the team context.</li>
 <li>Understands key business drivers, and uses this understanding to accomplish own work.</li>
 <li>Thinks beyond their own immediate tasks more regularly – for instance, considering how to prevent a problem from recurring, or how to streamline a process for the whole team.</li>
 <li>While still focused mainly on operational execution, they show growing awareness of “the bigger picture” in the team and make suggestions that align with that broader view.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Bringt aktiv Verbesserungsvorschläge ein, zeigt nicht nur Probleme auf, sondern schlägt auch mögliche Lösungen oder neue Ansätze im Teamkontext vor.</li>
 <li>Versteht die wichtigsten geschäftlichen Einflussfaktoren und nutzt dieses Verständnis, um die eigene Arbeit effektiv zu erledigen.</li>
 <li>Denkt regelmäßig über die eigenen Aufgaben hinaus – zum Beispiel, indem sie/er überlegt, wie sich ein Problem künftig vermeiden lässt oder wie ein Prozess für das gesamte Team effizienter gestaltet werden kann.</li>
 <li>Obwohl der Fokus weiterhin auf der operativen Umsetzung liegt, zeigt sich ein wachsendes Bewusstsein für das „große Ganze“ im Team und es werden Vorschläge gemacht, die mit dieser übergeordneten Perspektive übereinstimmen.</li>
 </ul>`
-                }
-            },
-            '03': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '03': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Independently executes complex tasks or leads small projects, taking full ownership of their success from planning to delivery.</li>
 <li>By independently managing complex tasks and proactively identifying areas for improvement, employees at this level enhance team efficiency and enable sustained progress toward shared goals.</li>
 <li>Plans tasks, resources, and timelines proactively and with foresight, eg. anticipating next steps and preparing backup options for potential risks.</li>
@@ -294,64 +303,65 @@
 <li>Known for high reliability and strong results orientation – consistently delivers quality outcomes and can be trusted to meet commitments.</li>
 <li>Normally receives little instruction on day-to-day work, general instructions on new assignments.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Führt komplexe Aufgaben eigenständig aus oder leitet kleinere Projekte, wobei sie die volle Verantwortung für den Erfolg von der Planung bis zur Umsetzung übernimmt.</li>
 <li>Durch die selbstständige Bearbeitung komplexer Aufgaben und das proaktive Erkennen von Verbesserungsmöglichkeiten steigern Mitarbeitende auf diesem Level die Effizienz des Teams und ermöglichen nachhaltigen Fortschritt in Richtung gemeinsamer Ziele.</li>
-<li>Plant Aufgaben, Ressourcen und Zeitpläne vorausschauend und proaktiv, z. B. durch das Antizipieren nächster Schritte und das Vorbereiten von Alternativen für potenzielle Risiken.</li>
-<li>Erkennt Risiken oder Hindernisse frühzeitig (z. B. Ressourcenengpässe, Terminüberschneidungen) und ergreift rechtzeitig Maßnahmen zur Risikominderung oder eskaliert bei Bedarf.</li>
+<li>Plant Aufgaben, Ressourcen und Zeitpläne vorausschauend und proaktiv, z. B. durch das Antizipieren nächster Schritte und das Vorbereiten von Alternativen für potenzielle Risiken.</li>
+<li>Erkennt Risiken oder Hindernisse frühzeitig (z. B. Ressourcenengpässe, Terminüberschneidungen) und ergreift rechtzeitig Maßnahmen zur Risikominderung oder eskaliert bei Bedarf.</li>
 <li>Optimiert bestehende Prozesse aktiv und eigenständig, sucht gezielt nach Ineffizienzen in der Arbeitsweise und setzt Verbesserungen um – ohne auf Anweisungen zu warten.</li>
 <li>Gilt als äußerst zuverlässig und stark ergebnisorientiert – liefert konsequent hochwertige Ergebnisse und ist dafür bekannt, Zusagen einzuhalten.</li>
 <li>Erhält in der Regel nur wenige Anweisungen für die tägliche Arbeit, bei neuen Aufgaben meist nur allgemeine Hinweise.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Regarded as an expert in their field within the organization: They have deep knowledge and others often turn to them for advice in this area</li>
 <li>Quickly grasps how different aspects of their field interrelate and stays on top of emerging trends or best practices.</li>
 <li>Seeks internal and external learning opportunities to begin developing true functional expertise.</li>
 <li>Actively supports the development of other team members, eg. by informally coaching newer colleagues or providing guidance on complex tasks.</li>
 <li>Regularly shares knowledge with the wider team, such as through leading training sessions, workshops, or one-on-one mentoring, to build collective expertise.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Gilt innerhalb der Organisation als Expert:in auf ihrem Fachgebiet: Verfügt über tiefgehendes Wissen und wird häufig von anderen um Rat in diesem Bereich gebeten.</li>
 <li>Versteht schnell, wie verschiedene Aspekte ihres Fachgebiets miteinander zusammenhängen und bleibt über neue Trends oder bewährte Praktiken auf dem Laufenden.</li>
 <li>Sucht aktiv nach internen und externen Lernmöglichkeiten, um echte fachliche Expertise weiterzuentwickeln.</li>
-<li>Unterstützt aktiv die Entwicklung anderer Teammitglieder, z. B. durch informelles Coaching neuer Kolleg:innen oder durch Anleitung bei komplexen Aufgaben.</li>
-<li>Teilt regelmäßig Wissen mit dem gesamten Team, z. B. durch das Leiten von Schulungen, Workshops oder individuelles Mentoring, um kollektive Expertise aufzubauen.</li>
+<li>Unterstützt aktiv die Entwicklung anderer Teammitglieder, z. B. durch informelles Coaching neuer Kolleg:innen oder durch Anleitung bei komplexen Aufgaben.</li>
+<li>Teilt regelmäßig Wissen mit dem gesamten Team, z. B. durch das Leiten von Schulungen, Workshops oder individuelles Mentoring, um kollektive Expertise aufzubauen.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Presents complex or technical information in a clear, digestible way for different audiences (peers, management, or external partners), ensuring understanding.</li>
 <li>Mediates between teams or stakeholder groups when there are differing interests or priorities, finding common ground and solutions acceptable to all.</li>
 <li>Proactively builds and maintains relationships with key stakeholders (within and outside the team), understanding their needs and ensuring good cooperation.</li>
 <li>Fosters an open feedback culture in the team – encourages others to give feedback, models accepting feedback well, and addresses issues transparently to improve team dynamics.</li>
 </ul>`,
-                    de: `<ul>
-<li>Präsentiert komplexe oder technische Informationen klar und verständlich für unterschiedliche Zielgruppen (z. B. Kolleg:innen, Führungskräfte oder externe Partner), sodass das Verständnis sichergestellt ist.</li>
+            de: `<ul>
+<li>Präsentiert komplexe oder technische Informationen klar und verständlich für unterschiedliche Zielgruppen (z. B. Kolleg:innen, Führungskräfte oder externe Partner), sodass das Verständnis sichergestellt ist.</li>
 <li>Vermittelt zwischen Teams oder Stakeholder-Gruppen, wenn unterschiedliche Interessen oder Prioritäten bestehen, und findet gemeinsame Lösungen, die für alle akzeptabel sind.</li>
 <li>Baut proaktiv Beziehungen zu wichtigen Stakeholdern auf und pflegt sie – sowohl innerhalb als auch außerhalb des Teams – mit dem Ziel, deren Bedürfnisse zu verstehen und eine gute Zusammenarbeit sicherzustellen.</li>
 <li>Fördert eine offene Feedback-Kultur im Team – ermutigt andere, Feedback zu geben, geht selbst vorbildlich mit Rückmeldungen um und spricht Probleme transparent an, um die Teamdynamik zu verbessern.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Thinks holistically about the work, recognizing opportunities for optimization and innovation that affect not just their tasks but connected processes across the team or department.</li>
 <li>Brings creative ideas to the table for improving processes or executing projects, often introducing new ways to solve problems or new tools to increase efficiency.</li>
 <li>Understands how their team’s activities link to broader business goals, and makes decisions or suggestions aligned with company objectives.</li>
 <li>Begins to contribute to strategic discussions in their domain, providing insights on how the team’s work could better support organizational goals or adapt to upcoming challenges.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Denkt ganzheitlich über die Arbeit nach und erkennt Optimierungs- und Innovationsmöglichkeiten, die nicht nur die eigenen Aufgaben betreffen, sondern auch angrenzende Prozesse im Team oder in der Abteilung.</li>
 <li>Bringt kreative Ideen zur Verbesserung von Prozessen oder zur Umsetzung von Projekten ein, indem häufig neue Lösungsansätze oder Werkzeuge zur Effizienzsteigerung vorgeschlagen werden.</li>
 <li>Versteht, wie die Aktivitäten des eigenen Teams mit übergeordneten Unternehmenszielen verknüpft sind, und trifft Entscheidungen oder macht Vorschläge, die mit diesen Zielen im Einklang stehen.</li>
 <li>Beginnt, sich an strategischen Diskussionen im eigenen Fachbereich zu beteiligen, und liefert dabei Impulse, wie die Arbeit des Teams besser zur Erreichung der Unternehmensziele beitragen oder auf kommende Herausforderungen reagieren kann.</li>
 </ul>`
-                }
-            },
-            '04': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '04': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Leads the team by owning and prioritizing their work, ensuring alignment with goals and business needs by breaking down strategic objectives into clear, actionable team priorities and guiding their execution, managers at this level ensure focused delivery, strengthen team alignment, and drive results that directly support company goals.</li>
 <li>Reprioritizes confidently under pressure, adjusting plans when deadlines shift or issues arise while maintaining team focus.</li>
 <li>By proactively improving cross-team processes, this role directly contributes to organizational growth and functional exellence.</li>
@@ -361,7 +371,7 @@
 <li>Identifies systemic challenges and implements sustainable, root-cause solutions, not just short-term fixes.</li>
 <li>Administers and enforces company policies, processes, and ways of working; recommends procedural improvements across own team and peer teams.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Führt das Team, indem Aufgaben übernommen und priorisiert werden, sodass sie mit den Zielen und geschäftlichen Anforderungen übereinstimmen.</li>
 <li>Durch das Herunterbrechen strategischer Ziele in klare, umsetzbare Teamprioritäten und deren gezielte Umsetzung sorgen Führungskräfte auf diesem Level für fokussierte Ergebnisse, stärken die Teamausrichtung und erzielen Resultate, die direkt zur Erreichung der Unternehmensziele beitragen.</li>
 <li>Priorisiert souverän unter Druck, passt Pläne bei verschobenen Deadlines oder auftretenden Problemen an und sorgt gleichzeitig dafür, dass das Team fokussiert und effektiv bleibt.</li>
@@ -372,25 +382,25 @@
 <li>Identifiziert systemische Herausforderungen und setzt nachhaltige Lösungen um, die Ursachen beheben – nicht nur kurzfristige Maßnahmen.</li>
 <li>Setzt Unternehmensrichtlinien, Prozesse und Arbeitsweisen um und durch; schlägt prozessuale Verbesserungen sowohl im eigenen Team als auch in benachbarten Teams vor.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Expands and deepens expertise in their field, staying ahead of trends and pushing team knowledge forward.</li>
 <li>Drives organizational learning by sharing expertise and organizing learning activities across the team.</li>
 <li>Identifies skill or knowledge gaps early and takes action through training, mentoring, or thoughtful task assignments.</li>
 <li>Coaches employees in their professional development, providing regular feedback and support to help them grow in their roles, guiding their development through professional support, and example-setting.</li>
 <li>Challenges assumptions and conventional thinking to ensure smart, agile, and effective solutions within and beyond the team.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Erweitert und vertieft kontinuierlich die Expertise im eigenen Fachgebiet, bleibt über Trends informiert und treibt das Wissen im Team aktiv voran.</li>
 <li>Fördert organisatorisches Lernen, indem Fachwissen geteilt und Lernaktivitäten im Team organisiert werden.</li>
-<li>Erkennt frühzeitig Kompetenz- oder Wissenslücken und handelt gezielt – z. B. durch Trainings, Mentoring oder durchdachte Aufgabenverteilung.</li>
+<li>Erkennt frühzeitig Kompetenz- oder Wissenslücken und handelt gezielt – z. B. durch Trainings, Mentoring oder durchdachte Aufgabenverteilung.</li>
 <li>Coacht Mitarbeitende in ihrer beruflichen Entwicklung, gibt regelmäßig Feedback und Unterstützung, hilft ihnen, in ihrer Rolle zu wachsen, und begleitet sie durch professionelles Vorleben und gezielte Förderung.</li>
 <li>Hinterfragt bestehende Annahmen und konventionelles Denken, um intelligente, agile und wirksame Lösungen innerhalb und außerhalb des Teams zu ermöglichen.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Sets clear expectations and follows through ih appropriate recognition, feedback or performance Coaching.</li>
 <li>Occasionally represents the company at relevant undustry meetups or knowledge-sharing events, contributing to Mister Spex's visbility and professional community engagement.</li>
 <li>Leads inclusive and focused team meetings, ensuring participation and shared ownership of decisions.</li>
@@ -401,76 +411,77 @@
 <li>Enhances team culture through gratitude, recognition, resilience, and an inspiring approach to leadership.</li>
 <li>Remains composed under pressure and transmits calm and determination to the team.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Setzt klare Erwartungen und sorgt für entsprechende Anerkennung, Feedback oder Leistungscoaching.</li>
 <li>Vertritt das Unternehmen gelegentlich bei relevanten Branchentreffen oder Wissensaustausch-Veranstaltungen und trägt so zur Sichtbarkeit von Mister Spex und zur Einbindung in die Fachgemeinschaft bei.</li>
 <li>Leitet inklusive und fokussierte Teammeetings, sorgt für Beteiligung und gemeinsame Verantwortung bei Entscheidungen.</li>
-<li>Führt schwierige Gespräche konstruktiv, z. B. bei kritischem Feedback oder der Lösung von Teamkonflikten – stets respektvoll und mit dem Ziel, eine positive Weiterentwicklung zu ermöglichen.</li>
+<li>Führt schwierige Gespräche konstruktiv, z. B. bei kritischem Feedback oder der Lösung von Teamkonflikten – stets respektvoll und mit dem Ziel, eine positive Weiterentwicklung zu ermöglichen.</li>
 <li>Baut strategische interne Netzwerke auf, um Zusammenarbeit, gemeinsames Lernen und Ressourcennutzung zu fördern.</li>
 <li>Überwindet Silos, indem funktionsübergreifende Projekte oder Foren initiiert werden, die auf gemeinsame Ziele ausgerichtet sind.</li>
 <li>Nutzen Daten und Erfahrung zur Definition von Strategien und sichern die Ausrichtung und Zustimmung des Teams durch effektive Kommunikation.</li>
 <li>Stärkt die Teamkultur durch Dankbarkeit, Anerkennung, Resilienz und einen inspirierenden Führungsstil.</li>
 <li>Bleibt auch unter Druck ruhig und überträgt diese Ruhe und Entschlossenheit auf das Team.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Plans with a strategic mindset within their area of responsibility, setting longer-term goals and aligning team efforts with the broader organizational strategy.</li>
 <li>Proposes and develops new initiatives to drive team or department progress (e.g. features, programs, processes).</li>
 <li>Fosters a culture of innovation where team members are empowered to share bold ideas and test improvements.</li>
 <li>Anticipates future risks and opportunities, preparing the team proactively rather than reactively.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Plant mit strategischem Weitblick im eigenen Verantwortungsbereich, setzt langfristige Ziele und richtet die Teamarbeit an der übergeordneten Unternehmensstrategie aus.</li>
-<li>Schlägt neue Initiativen vor und entwickelt sie weiter, um Fortschritte im Team oder in der Abteilung zu erzielen (z. B. neue Funktionen, Programme oder Prozesse).</li>
+<li>Schlägt neue Initiativen vor und entwickelt sie weiter, um Fortschritte im Team oder in der Abteilung zu erzielen (z. B. neue Funktionen, Programme oder Prozesse).</li>
 <li>Fördert eine Innovationskultur, in der Teammitglieder ermutigt werden, mutige Ideen einzubringen und Verbesserungen zu testen.</li>
 <li>Antizipiert zukünftige Risiken und Chancen und bereitet das Team proaktiv darauf vor, statt nur auf auftretende Probleme zu reagieren.</li>
 </ul>`
-                }
-            },
-            '05': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '05': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Owns complex programs or strategically critical topics, far beyond day-to-day operations.</li>
 <li>By proactively identifying inefficiencies and leading improvements across teams, employees at this level strengthen functional performance and drive sustainable organizational growth.</li>
 <li>Leads and coordinates multiple teams or projects, often cross-functional, serving as the integration point for aligned execution.</li>
 <li>Resolves competing priorities through decisive, transparent communication and clear trade-off management.</li>
 <li>Ensures that all work within their scope directly contributes to top-level company objectives, connecting day-to-day execution with strategic outcomes.</li>
-<li>Establishes and enforces standards of operational excellence - defining best practices, quality benchmarks, and scalable processes that others follow.</li>
+<li>Establishes and enforces standards of operational excellence - defining best practices, quality benchmarks, and scalable processes that others follow.</li>
 <li>Monitors the performance of their area (through metrics, reports, reviews) and takes corrective actions when results deviate from targets.</li>
 <li>Demonstrates deep planning capability, aligning resources across teams and adapting quickly to evolving business or talent needs.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Verantwortet komplexe Programme oder strategisch wichtige Themen, die weit über das Tagesgeschäft hinausgehen.</li>
 <li>Durch das proaktive Erkennen von Ineffizienzen und die Leitung teamübergreifender Verbesserungen stärken Mitarbeitende auf diesem Level die funktionale Leistungsfähigkeit und fördern nachhaltiges organisatorisches Wachstum.</li>
 <li>Leitet und koordiniert mehrere Teams oder Projekte, häufig funktionsübergreifend, und dient als zentrale Schnittstelle für abgestimmte Umsetzung.</li>
 <li>Löst konkurrierende Prioritäten durch entschlossene, transparente Kommunikation und klares Abwägen von Optionen.</li>
 <li>Stellt sicher, dass alle Arbeiten im eigenen Verantwortungsbereich direkt zu den übergeordneten Unternehmenszielen beitragen, und verbindet die tägliche Umsetzung mit strategischen Ergebnissen.</li>
 <li>Etabliert und setzt Standards für operative Exzellenz um – definiert Best Practices, Qualitätsmaßstäbe und skalierbare Prozesse, denen andere folgen.</li>
-<li>Überwacht die Leistung im eigenen Bereich (z. B. durch Kennzahlen, Berichte, Reviews) und ergreift Korrekturmaßnahmen, wenn Ergebnisse von den Zielvorgaben abweichen.</li>
+<li>Überwacht die Leistung im eigenen Bereich (z. B. durch Kennzahlen, Berichte, Reviews) und ergreift Korrekturmaßnahmen, wenn Ergebnisse von den Zielvorgaben abweichen.</li>
 <li>Zeigt ausgeprägte Planungsfähigkeiten, stimmt Ressourcen teamübergreifend ab und passt sich schnell an sich verändernde geschäftliche oder personelle Anforderungen an.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
-<li>Serves as a defining figure in their functional area, internally and externally - recognized as a thought leader or spokesperson for the function.</li>
+          },
+          'Depth & Development': {
+            en: `<ul>
+<li>Serves as a defining figure in their functional area, internally and externally - recognized as a thought leader or spokesperson for the function.</li>
 <li>Creates new methodologies, frameworks, or tools that improve company-wide effectiveness in their field.</li>
 <li>Initiates and drives adoption of best practices beyond their immediate team, setting standards across the organization.</li>
 <li>Coaches team members to develop solutions to complex team challenges and supports them in gaining stakeholder alignment.</li>
-<li>Actively champions sustainable work practices - modeling balance, and mentoring team members to manage energy, boundaries, and well-being.</li>
+<li>Actively champions sustainable work practices - modeling balance, and mentoring team members to manage energy, boundaries, and well-being.</li>
 <li>Shares knowledge publicly and internally (via conferences, workshops, or industry groups) enhancing both personal and company visibility.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Gilt als prägende Persönlichkeit im eigenen Fachbereich, sowohl intern als auch extern – anerkannt als Vordenker:in oder Sprecher:in für die Funktion.</li>
 <li>Entwickelt neue Methoden, Rahmenwerke oder Werkzeuge, die die Effektivität im gesamten Unternehmen verbessern.</li>
 <li>Initiiert und fördert die Einführung von Best Practices über das eigene Team hinaus, und setzt Standards für die gesamte Organisation.</li>
 <li>Coacht Teammitglieder bei der Entwicklung von Lösungen für komplexe Herausforderungen und unterstützt sie dabei, die Zustimmung relevanter Stakeholder zu gewinnen.</li>
 <li>Setzt sich aktiv für nachhaltige Arbeitsweisen ein – lebt selbst eine gesunde Balance vor und unterstützt Teammitglieder dabei, Energie, Grenzen und Wohlbefinden zu managen.</li>
-<li>Teilt Wissen öffentlich und intern (z. B. über Konferenzen, Workshops oder Branchengruppen) und stärkt damit sowohl die persönliche als auch die unternehmerische Sichtbarkeit.</li>
+<li>Teilt Wissen öffentlich und intern (z. B. über Konferenzen, Workshops oder Branchengruppen) und stärkt damit sowohl die persönliche als auch die unternehmerische Sichtbarkeit.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Navigates high-level discussions confidently across all audiences, from frontline staff to executive leadership, adjusting style accordingly.</li>
 <li>Represents the company at relevant industry events and professional forums, sharing expertise and strengthening Mister Spex's visibility and reputation in the market.</li>
 <li>Leverages a broad and influential network, internally and externally, to move initiatives forward and solve challenges efficiently.</li>
@@ -478,10 +489,10 @@
 <li>Inspires and motivates through communication - driving alignment, engagement, and performance through authenticity and clarity.</li>
 <li>Demonstrates personal resilience and cultivates a results-driven team that thrives under pressure.</li>
 <li>Builds outstanding teams through intentional org design, strategic hiring, thoughtful onboarding, and capacity planning.</li>
-<li>Prioritizes human connection and recognition - creating team rituals, investing in shared moments, and celebrating wins.</li>
+<li>Prioritizes human connection and recognition - creating team rituals, investing in shared moments, and celebrating wins.</li>
 <li>Fosters a cross-functional culture of inclusion and belonging, going beyond their team to connect with new hires and ensure inclusive practices.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Führt hochrangige Gespräche souverän mit allen Zielgruppen – von Mitarbeitenden an der Basis bis zur Geschäftsleitung – und passt den Kommunikationsstil entsprechend an.</li>
 <li>Vertritt das Unternehmen bei relevanten Branchenevents und Fachforen, teilt Expertise und stärkt die Sichtbarkeit sowie das Ansehen von Mister Spex am Markt.</li>
 <li>Nutzt ein breites und einflussreiches Netzwerk, intern wie extern, um Initiativen voranzubringen und Herausforderungen effizient zu lösen.</li>
@@ -492,89 +503,91 @@
 <li>Setzt auf menschliche Verbindung und Anerkennung – schafft Teamrituale, investiert in gemeinsame Momente und feiert Erfolge.</li>
 <li>Fördert eine funktionsübergreifende Kultur der Inklusion und Zugehörigkeit, geht über das eigene Team hinaus, um neue Mitarbeitende einzubinden und inklusive Praktiken sicherzustellen.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Shapes functional or company-level strategy, identifying where value is created and how it can be maximized for users, customers, and the business.</li>
-<li>Develops and drives bold, innovative initiatives (from new product lines to org-wide transformations) that redefine the company’s trajectory.</li>
+<li>Develops and drives bold, innovative initiatives (from new product lines to org-wide transformations) that redefine the company’s trajectory.</li>
 <li>Leads future-focused change efforts, such as digitalization, structural redesign, or new go-to-market approaches.</li>
-<li>Keeps the company forward-looking - championing emerging topics and steering focus toward long-term opportunity rather than short-term comfort.</li>
+<li>Keeps the company forward-looking - championing emerging topics and steering focus toward long-term opportunity rather than short-term comfort.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Gestaltet funktionale oder unternehmensweite Strategien, indem erkannt wird, wo Wert geschaffen wird und wie dieser für Nutzer:innen, Kund:innen und das Unternehmen maximiert werden kann.</li>
 <li>Entwickelt und treibt mutige, innovative Initiativen voran – von neuen Produktlinien bis hin zu unternehmensweiten Transformationen – die die zukünftige Ausrichtung des Unternehmens neu definieren.</li>
-<li>Führt zukunftsorientierte Veränderungsprozesse, wie z. B. Digitalisierung, strukturelle Neugestaltung oder neue Go-to-Market-Ansätze.</li>
+<li>Führt zukunftsorientierte Veränderungsprozesse, wie z. B. Digitalisierung, strukturelle Neugestaltung oder neue Go-to-Market-Ansätze.</li>
 <li>Hält das Unternehmen zukunftsgerichtet, indem aufkommende Themen gefördert und der Fokus auf langfristige Chancen statt kurzfristigen Komfort gelenkt wird.</li>
 </ul>`
-                }
-            },
-            '06': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '06': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Leads entire departments or large organizational units, setting the tone and direction for all operations within their scope.</li>
 <li>By shaping departmental strategies to align with company-wide goals and leading their large-scale implementation, directors ensure that teams deliver meaningfuld results and actively contribute to long-term business success.</li>
 <li>Translates high-level corporate goals into concrete operational plans for their teams, eg. breaking down company-wide revenue targets into team-level KPIs and deliverables.</li>
 <li>Monitors organizational performance using metrics, reports, and reviews; takes corrective actions when results deviate to ensure teams stay on track.</li>
 <li>Resolves complex, cross-departmental challenges by coordinating resources, aligning stakeholders, and applying influence across the organization.</li>
-<li>Makes high-impact decisions involving significant trade-offs in cost, time, or quality - such as strategic pivots, budget reallocation, or investment choices - grounded in business risk awareness and strategic judgment.</li>
+<li>Makes high-impact decisions involving significant trade-offs in cost, time, or quality - such as strategic pivots, budget reallocation, or investment choices - grounded in business risk awareness and strategic judgment.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Leitet ganze Abteilungen oder große Organisationseinheiten und bestimmt die Ausrichtung sowie den Ton für alle operativen Tätigkeiten im eigenen Verantwortungsbereich.</li>
 <li>Durch die Gestaltung von Abteilungsstrategien im Einklang mit den unternehmensweiten Zielen und deren großflächige Umsetzung stellen Führungskräfte auf diesem Level sicher, dass Teams bedeutende Ergebnisse liefern und aktiv zum langfristigen Geschäftserfolg beitragen.</li>
-<li>Übersetzt übergeordnete Unternehmensziele in konkrete operative Pläne für die eigenen Teams, z. B. durch das Herunterbrechen von unternehmensweiten Umsatzzielen in teambezogene KPIs und konkrete Ergebnisse.</li>
+<li>Übersetzt übergeordnete Unternehmensziele in konkrete operative Pläne für die eigenen Teams, z. B. durch das Herunterbrechen von unternehmensweiten Umsatzzielen in teambezogene KPIs und konkrete Ergebnisse.</li>
 <li>Überwacht die organisatorische Leistung anhand von Kennzahlen, Berichten und Reviews und ergreift Korrekturmaßnahmen, wenn Ergebnisse von den Zielvorgaben abweichen, um sicherzustellen, dass die Teams auf Kurs bleiben.</li>
 <li>Löst komplexe, abteilungsübergreifende Herausforderungen, indem Ressourcen koordiniert, Stakeholder abgestimmt und Einfluss im gesamten Unternehmen ausgeübt wird.</li>
-<li>Trifft Entscheidungen mit großer Wirkung, bei denen erhebliche Abwägungen in Bezug auf Kosten, Zeit oder Qualität erforderlich sind – z. B. strategische Kurswechsel, Budgetumschichtungen oder Investitionsentscheidungen – basierend auf einem fundierten Verständnis von Geschäftsrisiken und strategischem Urteilsvermögen.</li>
+<li>Trifft Entscheidungen mit großer Wirkung, bei denen erhebliche Abwägungen in Bezug auf Kosten, Zeit oder Qualität erforderlich sind – z. B. strategische Kurswechsel, Budgetumschichtungen oder Investitionsentscheidungen – basierend auf einem fundierten Verständnis von Geschäftsrisiken und strategischem Urteilsvermögen.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Guides the technical and strategic direction of a large organizational unit, determining which capabilities the group needs to develop to meet future demands.</li>
 <li>Identifies and evaluates industry trends and market changes, translating them into strategic recommendations for the business, eg., evolving product direction or operating models.</li>
-<li>Develops the next generation of leaders through mentoring, succession planning, and structured development initiatives - strengthening the leadership pipeline.</li>
-<li>Creates systems and structures for continuous organizational learning - such as cross-team training, knowledge platforms, and communities of practice - to scale expertise across the business.</li>
+<li>Develops the next generation of leaders through mentoring, succession planning, and structured development initiatives - strengthening the leadership pipeline.</li>
+<li>Creates systems and structures for continuous organizational learning - such as cross-team training, knowledge platforms, and communities of practice - to scale expertise across the business.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Leitet die technische und strategische Ausrichtung einer großen Organisationseinheit und bestimmt, welche Fähigkeiten die Gruppe entwickeln muss, um zukünftigen Anforderungen gerecht zu werden.</li>
-<li>Identifiziert und bewertet Branchentrends und Marktveränderungen und übersetzt diese in strategische Empfehlungen für das Unternehmen, z. B. hinsichtlich der Weiterentwicklung von Produkten oder Betriebsmodellen.</li>
+<li>Identifiziert und bewertet Branchentrends und Marktveränderungen und übersetzt diese in strategische Empfehlungen für das Unternehmen, z. B. hinsichtlich der Weiterentwicklung von Produkten oder Betriebsmodellen.</li>
 <li>Entwickelt die nächste Generation von Führungskräften durch Mentoring, Nachfolgeplanung und strukturierte Entwicklungsinitiativen – und stärkt damit die Führungskräftepipeline.</li>
 <li>Schafft Systeme und Strukturen für kontinuierliches organisatorisches Lernen – wie teamübergreifende Schulungen, Wissensplattformen und Communities of Practice – um Fachwissen im gesamten Unternehmen zu skalieren.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Oversees communication across large teams or departments, ensuring clarity, consistency, and alignment with corporate direction.</li>
 <li>Represents the company in strategic external discussions such as industry conferences, panels and partnerships, helping to strengthen Mister Spex's public presence and influence.</li>
-<li>Owns internal and external communication for their area - from delivering department strategy updates to representing the unit with executives or external partners.</li>
+<li>Owns internal and external communication for their area - from delivering department strategy updates to representing the unit with executives or external partners.</li>
 <li>Champions cross-functional collaboration, setting joint objectives, aligning incentives, and establishing working norms across divisions.</li>
 <li>Builds and maintains influential networks internally (eg., peers, executives, key enablers) and externally (eg., industry partners, clients), leveraging these relationships to advance strategic goals .</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Überwacht die Kommunikation über große Teams oder Abteilungen hinweg und sorgt für Klarheit, Konsistenz und Ausrichtung an der Unternehmensstrategie.</li>
-<li>Vertritt das Unternehmen in strategischen externen Gesprächen, z. B. auf Branchentreffen, Podiumsdiskussionen und in Partnerschaften – und trägt dazu bei, die öffentliche Präsenz und den Einfluss von Mister Spex zu stärken.</li>
+<li>Vertritt das Unternehmen in strategischen externen Gesprächen, z. B. auf Branchentreffen, Podiumsdiskussionen und in Partnerschaften – und trägt dazu bei, die öffentliche Präsenz und den Einfluss von Mister Spex zu stärken.</li>
 <li>Verantwortet die interne und externe Kommunikation für seinen Bereich – von der Vermittlung von Strategie-Updates bis hin zur Repräsentation der Einheit gegenüber Führungskräften oder externen Partnern.</li>
 <li>Fördert bereichsübergreifende Zusammenarbeit, indem gemeinsame Ziele gesetzt, Anreize abgestimmt und Arbeitsnormen zwischen Abteilungen etabliert werden.</li>
-<li>Baut einflussreiche Netzwerke auf und pflegt sie, sowohl intern (z. B. mit Kolleg:innen, Führungskräften, Schlüsselpersonen) als auch extern (z. B. mit Branchenpartnern, Kund:innen), um strategische Ziele voranzutreiben.</li>
+<li>Baut einflussreiche Netzwerke auf und pflegt sie, sowohl intern (z. B. mit Kolleg:innen, Führungskräften, Schlüsselpersonen) als auch extern (z. B. mit Branchenpartnern, Kund:innen), um strategische Ziele voranzutreiben.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Develops and implements strategies for their area that align with the overall corporate strategy and market opportunities.</li>
-<li>Leads large-scale transformation efforts - such as org redesigns, process overhauls, or system changes - to increase adaptability and performance.</li>
+<li>Leads large-scale transformation efforts - such as org redesigns, process overhauls, or system changes - to increase adaptability and performance.</li>
 <li>Thinks in long-term horizons, considering sustainability and innovation in every plan – focuses not only on this quarter or year, but how the department can innovate and remain competitive over several years.</li>
 <li>Encourages a culture of innovation and long-term thinking in their teams, ensuring that new ideas are evaluated and the organization continuously evolves rather than remaining static.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Entwickelt und implementiert Strategien für seinen Bereich, die mit der übergeordneten Unternehmensstrategie und den Marktchancen übereinstimmen.</li>
 <li>Leitet groß angelegte Transformationsprozesse – wie organisatorische Neuausrichtungen, grundlegende Prozessüberarbeitungen oder Systemänderungen – um Anpassungsfähigkeit und Leistung zu steigern.</li>
 <li>Denkt in langfristigen Perspektiven, berücksichtigt Nachhaltigkeit und Innovation in jeder Planung – mit Fokus nicht nur auf das aktuelle Quartal oder Jahr, sondern darauf, wie der Bereich über mehrere Jahre hinweg innovativ und wettbewerbsfähig bleiben kann.</li>
 <li>Fördert eine Kultur der Innovation und des langfristigen Denkens in den Teams, stellt sicher, dass neue Ideen bewertet werden und sich die Organisation kontinuierlich weiterentwickelt, anstatt statisch zu bleiben.</li>
 </ul>`
-                }
-            },
-            '07': {
-                'Execution & Impact': {
-                    en: `<ul>
+          }
+        },
+
+        '07': {
+          'Execution & Impact': {
+            en: `<ul>
 <li>Leads multiple departments or an entire division, setting vision and direction for a significant portion of the business.</li>
 <li>By defining divisional strategy and driving its execution in alignment with corporate objectives, Vice Presidents play a pivotal role in delivering business results, forstering innovation, and securing the long-term success of the organization.</li>
 <li>Owns execution of the company’s strategy in their domain, ensuring divisional business plans directly support and deliver corporate objectives.</li>
@@ -582,745 +595,741 @@
 <li>Anticipates external shifts (market, regulatory, technological) and proactively adjusts strategy and operations to seize opportunities or mitigate risks.</li>
 <li>Champions operational excellence across their area, embedding high standards, performance metrics, and a mindset of continuous improvement to secure long-term organizational health.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Leitet mehrere Abteilungen oder eine gesamte Division und gibt Vision und Richtung für einen bedeutenden Teil des Unternehmens vor.</li>
 <li>Durch die Definition der Divisionsstrategie und deren Umsetzung im Einklang mit den Unternehmenszielen spielen Vice Presidents eine zentrale Rolle bei der Erreichung von Geschäftsergebnissen, der Förderung von Innovation und der Sicherung des langfristigen Unternehmenserfolgs.</li>
 <li>Verantwortet die Umsetzung der Unternehmensstrategie in ihrem Bereich und stellt sicher, dass die Geschäftspläne der Division direkt die Unternehmensziele unterstützen und umsetzen.</li>
-<li>Treibt umfassende Transformationen voran (z. B. Umstrukturierung von Teams oder unternehmensweite Prozessverbesserungen), um Agilität und Effektivität zu steigern.</li>
+<li>Treibt umfassende Transformationen voran (z. B. Umstrukturierung von Teams oder unternehmensweite Prozessverbesserungen), um Agilität und Effektivität zu steigern.</li>
 <li>Antizipiert externe Veränderungen (Markt, Regulierung, Technologie) und passt Strategie und Betrieb proaktiv an, um Chancen zu nutzen oder Risiken zu minimieren.</li>
 <li>Setzt sich für operative Exzellenz in ihrem Bereich ein, indem hohe Standards, Leistungskennzahlen und eine Kultur der kontinuierlichen Verbesserung verankert werden, um die langfristige Gesundheit der Organisation zu sichern.</li>
 </ul>`
-                },
-                'Depth & Development': {
-                    en: `<ul>
+          },
+          'Depth & Development': {
+            en: `<ul>
 <li>Defines and drives company-wide learning and development strategies that future-proof the organization (e.g., leadership pipelines, digital capability programs).</li>
 <li>Sponsors major knowledge-building initiatives (e.g., innovation labs, academic partnerships, training programs) to strengthen the company’s position as an industry leader.</li>
 <li>Identifies industry trends early and turns insight into action - such as strategic shifts, market decisions, or business model evolution ahead of the competition.</li>
 <li>Acts as a thought leader in the industry and a magnet for external knowledge, influencing standards and keeping the company at the forefront through expert networks and external visibility.</li>
 </ul>`,
-                    de: `<ul>
-<li>Definiert und steuert unternehmensweite Strategien für Lernen und Entwicklung, um die Organisation zukunftssicher zu machen (z. B. Programme zur Führungskräfteentwicklung oder digitalen Kompetenzen).</li>
-<li>Fördert bedeutende Initiativen zum Wissensaufbau (z. B. Innovationslabore, akademische Partnerschaften, Trainingsprogramme), um die Position des Unternehmens als Branchenführer zu stärken.</li>
+            de: `<ul>
+<li>Definiert und steuert unternehmensweite Strategien für Lernen und Entwicklung, um die Organisation zukunftssicher zu machen (z. B. Programme zur Führungskräfteentwicklung oder digitalen Kompetenzen).</li>
+<li>Fördert bedeutende Initiativen zum Wissensaufbau (z. B. Innovationslabore, akademische Partnerschaften, Trainingsprogramme), um die Position des Unternehmens als Branchenführer zu stärken.</li>
 <li>Erkennt Branchentrends frühzeitig und wandelt Erkenntnisse in konkrete Maßnahmen um – etwa strategische Neuausrichtungen, Marktentscheidungen oder Weiterentwicklungen des Geschäftsmodells vor der Konkurrenz.</li>
 <li>Agiert als Vordenker in der Branche und als Magnet für externes Wissen, beeinflusst Standards und hält das Unternehmen durch Expertennetzwerke und externe Sichtbarkeit an der Spitze.</li>
 </ul>`
-                },
-                'Relationships & Communication': {
-                    en: `<ul>
+          },
+          'Relationships & Communication': {
+            en: `<ul>
 <li>Represents company externally at the highest levels,with major clients, investors, partners, media and at global industry events.</li>
 <li>Plays a strategic role in shaping the company's external presence and public image, including thought leadership, keynote speaking and guiding teams to engage in industry-wide initiatives.</li>
-<li>Communicates corporate vision and major decisions clearly and persuasively to diverse audiences - from employees across all levels to external stakeholders.</li>
+<li>Communicates corporate vision and major decisions clearly and persuasively to diverse audiences - from employees across all levels to external stakeholders.</li>
 <li>Uses communication as a strategic leadership tool – sets the narrative and tone for the organization, communicates vision and values consistently to shape the company culture.</li>
 <li>Through their communication and actions, sets key cultural markers within the company, reinforcing what the company stands for (eg. emphasizing integrity, innovation, customer focus) and influencing how employees across all levels interact and collaborate.</li>
 </ul>`,
-                    de: `<ul>
-<li>Vertritt das Unternehmen auf höchster Ebene nach außen, z. B. gegenüber wichtigen Kund:innen, Investor:innen, Partner:innen, Medien sowie auf globalen Branchenevents.</li>
+            de: `<ul>
+<li>Vertritt das Unternehmen auf höchster Ebene nach außen, z. B. gegenüber wichtigen Kund:innen, Investor:innen, Partner:innen, Medien sowie auf globalen Branchenevents.</li>
 <li>Spielt eine strategische Rolle bei der Gestaltung der externen Präsenz und des öffentlichen Images des Unternehmens, einschließlich Thought Leadership, Keynote-Vorträgen und der Anleitung von Teams zur Teilnahme an branchenweiten Initiativen.</li>
 <li>Kommuniziert die Unternehmensvision und wichtige Entscheidungen klar und überzeugend gegenüber unterschiedlichen Zielgruppen – von Mitarbeitenden aller Ebenen bis hin zu externen Stakeholdern.</li>
 <li>Setzt Kommunikation als strategisches Führungsinstrument ein – bestimmt die Erzählweise und den Ton des Unternehmens, vermittelt Vision und Werte konsistent, um die Unternehmenskultur zu prägen.</li>
-<li>Setzt durch Kommunikation und Handeln zentrale kulturelle Maßstäbe im Unternehmen, betont, wofür das Unternehmen steht (z. B. Integrität, Innovation, Kundenorientierung) und beeinflusst, wie Mitarbeitende auf allen Ebenen miteinander arbeiten und interagieren.</li>
+<li>Setzt durch Kommunikation und Handeln zentrale kulturelle Maßstäbe im Unternehmen, betont, wofür das Unternehmen steht (z. B. Integrität, Innovation, Kundenorientierung) und beeinflusst, wie Mitarbeitende auf allen Ebenen miteinander arbeiten und interagieren.</li>
 </ul>`
-                },
-                'Strategy & Creativity': {
-                    en: `<ul>
+          },
+          'Strategy & Creativity': {
+            en: `<ul>
 <li>Plays a central role in crafting overall corporate strategy - contributing deep domain expertise and shaping long-term business direction.</li>
 <li>Thinks in a visionary manner with a very long-term perspective, imagining what the business should look like in 5–10 years and steering the organization toward that vision.</li>
 <li>Champions disruptive innovation, challenging norms to secure long-term advantage (e.g., leading the charge into new technologies, markets, or business models).</li>
 <li>Establishes new benchmarks in the industry by pushing the organization beyond current standards, positioning Mister Spex as a leader that influences how the broader market evolves.</li>
 </ul>`,
-                    de: `<ul>
+            de: `<ul>
 <li>Spielt eine zentrale Rolle bei der Entwicklung der übergeordneten Unternehmensstrategie, bringt tiefes Fachwissen ein und gestaltet die langfristige Ausrichtung des Unternehmens.</li>
 <li>Denkt visionär mit einem sehr langfristigen Horizont, stellt sich vor, wie das Unternehmen in 5–10 Jahren aussehen sollte, und lenkt die Organisation aktiv in Richtung dieser Vision.</li>
-<li>Setzt sich für disruptive Innovationen ein, hinterfragt bestehende Normen, um langfristige Wettbewerbsvorteile zu sichern (z. B. durch Vorreiterrolle bei neuen Technologien, Märkten oder Geschäftsmodellen).</li>
+<li>Setzt sich für disruptive Innovationen ein, hinterfragt bestehende Normen, um langfristige Wettbewerbsvorteile zu sichern (z. B. durch Vorreiterrolle bei neuen Technologien, Märkten oder Geschäftsmodellen).</li>
 <li>Setzt neue Maßstäbe in der Branche, indem sie/er das Unternehmen über bestehende Standards hinausführt und Mister Spex als führenden Akteur positioniert, der die Entwicklung des Marktes maßgeblich beeinflusst.</li>
 </ul>`
-                }
-            }
-        };
-
-        const DOMAINS = ['Execution & Impact', 'Depth & Development', 'Relationships & Communication', 'Strategy & Creativity'];
-        const MATRIX = CAREER_DATA;
-
-        // Additional content
-        const CONTENT = {
-            intro: {
-                de: `<p>Unsere Job-Architektur basiert auf einem globalen Matrix-Framework, das dazu dient, Klarheit, Einheitlichkeit und Transparenz über alle Rollen und Funktionen hinweg sicherzustellen.</p>
-                <p>Jede Rolle ist in eine stufenbasierte Struktur eingebettet, die einen wachsenden Verantwortungsumfang, zunehmende Komplexität und größere Wirkung widerspiegelt.</p>
-                <h3><strong>Wozu dient die Matrix?</strong></h3>
-                <p>Orientierungshilfe für Mitarbeitende, um ihre Entwicklung zu planen und ihren Karriereweg bewusst zu gestalten.</p>
-                <p>Entscheidungsgrundlage für Führungskräfte, insbesondere bei Leistungsbeurteilungen und Beförderungen.</p>
-                <p>Navigationsinstrument für die Organisation, um Wachstum zu steuern und die Ausrichtung an unserer Unternehmensstrategie sicherzustellen.</p>`,
-                en: `<p>Our job architecture is built as a global matrix framework, designed to ensure clarity, consistency, and transparency across roles and functions.</p>
-                <p>Each role is defined within a level-based structure, which reflects increasing scope, complexity, and responsibility.</p>
-                <h3><strong>This matrix serves as:</strong></h3>
-                <p>A clear guideline for employees to grow and navigate their careers.</p>
-                <p>A decision-making tool for managers during performance reviews and promotions.</p>
-                <p>A compass for organizational growth and alignment with our company strategy.</p>`
-            },
-            principles: {
-                de: `<h3><strong>Unsere Stellenarchitektur folgt vier Grundprinzipien:</strong></h3>
-                
-                <h4><strong>📈 Kumulative Erwartungen</strong></h4>
-                <ul>
-                    <li>Jedes höhere Rollenprofil umfasst automatisch die Kompetenzen und Verantwortlichkeiten aller darunterliegenden Ebenen.</li>
-                    <li> Der Aufstieg in eine neue Stufe spiegelt daher nicht nur tiefere Fachkenntnis oder größeren Einfluss wider, sondern auch die Fähigkeit,</li>
-                    <li> die Erwartungen der vorherigen Ebenen kontinuierlich mit mehr Eigenständigkeit und spürbarer Wirkung zu erfüllen.</li>
-                </ul>
-
-                <h4><strong>⚖️ Funktionsübergreifende Konsistenz</strong></h4>
-                <ul>
-                    <li>Auch wenn sich die fachlichen Schwerpunkte unterscheiden, sind die Joblevel bereichsübergreifend aufeinander abgestimmt.</li>
-                    <li>Dadurch stellen wir Fairness und Einheitlichkeit in Entwicklung, Anerkennung und beruflichem Fortschritt innerhalb der gesamten Organisation sicher.</li>
-                </ul>
-
-                <h4><strong>🎯 Rolle vs. Titel</strong></h4>
-                <ul>
-                    <li>Tatsächlicher Beitrag zur Zielerreichung ist entscheidend</li>
-                    <li>Flexibilität bei Aufgabengestaltung</li>
-                    <li>Klare Entwicklungspfade und nachvollziehbare Anforderungen</li>
-                </ul>
-
-                <h4><strong>🚀 Leistung & Weiterentwicklung</strong></h4>
-                <ul>
-                    <li>Unsere Stellenarchitektur hilft uns dabei, Leistung fair zu beurteilen, Beförderungen transparent zu gestalten und deine berufliche Entwicklung gezielt zu unterstützen.</li>
-                    <li>Sie zeigt klar auf, was gute Arbeit auf jeder Ebene ausmacht, sowohl in deinem täglichen Einfluss als auch in deinem Verhalten.</li>
-                    <li>So schaffen wir ein gemeinsames Verständnis davon, was wir voneinander erwarten können,</li>
-                    <li>erleichtern interne Wechselmöglichkeiten und begleiten dich auf deinem persönlichen Entwicklungsweg bei Mister Spex.</li>
-                </ul>
-                en: `<h3><strong>Key Principles:</strong></h3>
-                
-                <h4><strong>📈 Cumulative Expectations</strong></h4>
-                <ul>
-                    <li>Each higher level builds on previous ones</li>
-                    <li>Includes all competencies and responsibilities from levels below</li>
-                    <li>Greater autonomy and impact with advancement</li>
-                </ul>
-
-                <h4><strong>⚖️ Cross-Functional Consistency</strong></h4>
-                <ul>
-                    <li>Job levels aligned across all departments</li>
-                    <li>Ensures fairness in development and progression</li>
-                    <li>Consistent recognition across the organization</li>
-                </ul>
-
-                <h4><strong>🎯 Role vs. Title</strong></h4>
-                <ul>
-                    <li>Emphasizes core contribution and scope</li>
-                    <li>Supports flexibility in role design</li>
-                    <li>Maintains clear development paths</li>
-                </ul>
-
-                <h4><strong>🚀 Performance & Progression</strong></h4>
-                <ul>
-                    <li>Guides performance evaluations and promotions</li>
-                    <li>Defines excellence at each level</li>
-                    <li>Covers both impact and behavior</li>
-                </ul>
-
-                <p><strong>This approach:</strong> Fosters shared understanding, promotes internal mobility, and supports individual growth within Mister Spex.</p>`
-            },
-            how: {
-                employee: {
-                    de: `<p>Unsere Karrierematrix zeigt dir, was in deiner aktuellen Rolle erwartet wird und welche Möglichkeiten du hast, dich bei Mister Spex weiterzuentwickeln. Egal, ob du in deiner jetzigen Rolle weiter wachsen oder dich auf neue Herausforderungen vorbereiten möchtest.</p>
-                    
-                    <p><strong>Du kannst sie als praktisches Werkzeug nutzen, um deine Entwicklung aktiv zu gestalten:</strong></p>
-                    
-                    <h4><strong>1. Verstehe dein aktuelles Level</strong></h4>
-                    <p>Schau dir den Abschnitt an, der zu deiner aktuellen Rolle passt. Dort findest du eine Beschreibung, was Erfolg in deiner Position bedeutet, welches Verhalten wichtig ist und wie du dich im Laufe der Zeit weiterentwickeln kannst.</p>
-                    
-                    <h4><strong>2. Entdecke was als Nächstes kommt</strong></h4>
-                    <p>Lies dir das nächsthöhere Level durch. So bekommst du ein Gefühl dafür, welche zusätzlichen Aufgaben, Verantwortlichkeiten und Kompetenzen dort gefragt sind. Diese Unterschiede helfen dir, konkrete Entwicklungsziele zu setzen.</p>
-                    
-                    <h4><strong>3. Reflektiere regelmäßig</strong></h4>
-                    <p>Vergleiche deine tägliche Arbeit mit den Beschreibungen in der Matrix. Wo erfüllst du die Erwartungen bereits sehr gut? Und in welchen Bereichen kannst du dich noch verbessern? Diese Selbstreflexion hilft dir, gezielt zu wachsen.</p>
-                    
-                    <h4><strong>4. Bereite dich auf Feedbackgespräche vor</strong></h4>
-                    <p>Komm gut vorbereitet zu deinen Check-ins oder Leistungsbeurteilungen. Nimm Beispiele mit, die zeigen, wie du die Erwartungen deiner Rolle erfüllst. So machst du deinen Fortschritt sichtbar und übernimmst Verantwortung für deine Entwicklung. Warte nicht darauf, dass deine Führungskraft alles erkennt – bring dich selbst aktiv ein.</p>
-                    
-                    <h4><strong>5. Plane dein Wachstum</strong></h4>
-                    <p>Besprich mit deiner Führungskraft, welche Schritte für dich als Nächstes wichtig sind. Wähle ein oder zwei Schwerpunkte aus – zum Beispiel Zusammenarbeit, Führungsverhalten oder fachliche Weiterentwicklung – und definiert gemeinsam klare, erreichbare Ziele.</p>
-                    
-                    <h4><strong>6. Gestalte deinen Karriereweg</strong></h4>
-                    <p>Du hast die Wahl, welchen Weg du gehen möchtest. Die Matrix zeigt dir verschiedene Möglichkeiten auf – von der Expertenlaufbahn über bereichsübergreifende Entwicklung bis hin zur Führung. Wähle den Weg, der zu deinen Stärken und Interessen passt, und nutze die Matrix als Orientierung für deine nächsten Schritte.</p>
-                    
-                    <h4><strong>Wie die Matrix mit Kompetenzen verbunden ist</strong></h4>
-                    <p>✅ <strong>Die Matrix</strong> = was insgesamt erwartet wird<br>
-                    ✅ <strong>Kompetenzen</strong> = wie du das in der Praxis umsetzt</p>
-                    
-                    <p>Gemeinsam bieten dir Matrix und Kompetenzen:</p>
-                    <ul>
-                        <li>einen klaren Überblick über deine Entwicklungsmöglichkeiten,</li>
-                        <li>eine gemeinsame Sprache für Feedback- und Entwicklungsgespräche,</li>
-                        <li>und eine transparente Grundlage für Coaching, Anerkennung und Karriereentscheidungen.</li>
-                    </ul>
-                    <p><strong>Nutze in deinen Check-ins und Bewertungen beide Systeme: die globale Karrierematrix, um die Erwartungen zu verstehen, und die Kompetenzen, um zu zeigen, wie du sie im Alltag umsetzt. So kannst du deinen Fortschritt gezielt steuern und sichtbar machen.</strong></p>`,
-                    en: `<p>The Matrix defines what's expected in your role and outlines how to grow at Mister Spex - whether you're focused on mastering your current position or preparing for new challenges.</p>
-                    
-                    <p><strong>Use it to:</strong></p>
-                    
-                    <h4><strong>1. Understand your current level</strong></h4>
-                    <p>Find the section in the matrix that matches your current job level. It describes what success looks like in your role, what behaviors are expected, and how you're meant to grow over time.</p>
-                    
-                    <h4><strong>2. Explore what's next</strong></h4>
-                    <p>Read the next level above yours to understand what changes in scope, ownership, and responsibility. Use that gap to guide your development priorities.</p>
-                    
-                    <h4><strong>3. Self-assess and reflect</strong></h4>
-                    <p>Benchmark yourself. Compare your daily work, behaviors, and outcomes against your level and the one above. Where are you exceeding expectations? Where are you not yet showing next-level capability?</p>
-                    
-                    <h4><strong>4. Prepare for feedback talks and reviews</strong></h4>
-                    <p>Come to check-ins or performance reviews with concrete examples that reflect the expectations at your level. This shows ownership of your development and makes your growth visible. Don't wait for your manager to connect the dots - take the lead in highlighting your progress.</p>
-                    
-                    <h4><strong>5. Plan your growth</strong></h4>
-                    <p>Use the matrix to co-create specific, measurable growth goals with your manager, aligned to your current level and the one above. Prioritize 1–2 key areas (e.g. collaboration, leadership behaviors, technical expertise).</p>
-                    
-                    <h4><strong>6. Own your career path</strong></h4>
-                    <p>Take control of your career. The matrix maps multiple paths: expert, cross-functional, and leadership. Choose your direction and use the matrix to chart concrete next steps.</p>
-                    
-                    <h4><strong>How the Matrix Connects to Competencies</strong></h4>
-                    <p>✅ <strong>The Matrix</strong> = what's expected overall<br>
-                    ✅ <strong>Competencies</strong> = how you bring it to life</p>
-                    
-                    <p>Together, they give you:</p>
-                    <ul>
-                        <li>a clear development path (from where you are to where you want to go),</li>
-                        <li>a common language for performance and feedback conversations, and</li>
-                        <li>a consistent basis for coaching, recognition, and career decisions.</li>
-                    </ul>
-                    <p><strong>In your check-ins and reviews, refer to both the Global Career Matrix and your Competencies to align your current work against the expectations set our in this framework.</strong></p>`
-                },
-                manager: {
-                    de: `<h3><strong>Für Führungskräfte: So soll die Matrix benutzt werden</strong></h3>
-                    <p>Die <strong>Global Career Matrix ist ein zentrales Führungsinstrument</strong> bei Mister Spex. Es wird von dir erwartet, sie aktiv und konsequent zu verwenden, um:</p>
-                    
-                    <ul>
-                        <li><strong>Leistung objektiv zu bewerten,</strong></li>
-                        <li><strong>die Entwicklung von Mitarbeitenden zu fördern</strong> und</li>
-                        <li><strong>faire, evidenzbasierte und vorurteilsfreie Entscheidungen</strong> über Weiterentwicklung, Anerkennung und Beförderung zu treffen.</li>
-                    </ul>
-                    
-                    <p>Diese Matrix ist keine optionale Orientierung – sie bildet die Grundlage dafür, wie wir Leistung und Wachstum definieren und beurteilen. Ihre konsequente Anwendung ist entscheidend, um Fairness, Transparenz und Vertrauen im gesamten Unternehmen zu gewährleisten.</p>
-                    
-                    <h4><strong>Verantwortlichkeiten von Führungskräften:</strong></h4>
-                    
-                    <h4><strong>1. Erwartungen klären</strong></h4>
-                    <p>Lege mit jedem Teammitglied klare, rollenbezogene Erwartungen fest – insbesondere beim Onboarding, nach Rollenwechseln oder bei Leistungsfragen. Nutze die Matrix, um zu definieren, was „gut" bedeutet in Bezug auf Eigenverantwortung, Zusammenarbeit und Denkweise auf dem jeweiligen Level.</p>
-                    
-                    <h4><strong>2. Faire Bewertung bei Leistungsbeurteilungen</strong></h4>
-                    <p>Die Matrix dient als Hauptreferenz bei den <strong>halbjährlichen Check-ins und den jährlichen Leistungsbeurteilungen.</strong> Bewerte beobachtetes Verhalten und erzielte Ergebnisse anhand der Level-Definitionen – nicht nach persönlichen Eindrücken oder Vergleichen mit anderen. Das ist entscheidend, um Vorurteile zu minimieren und einen fairen, transparenten Bewertungsprozess zu schaffen.</p>
-                    
-                    <p>🗓️ Beim Halbjahres-Check-in: Überprüfe mit der Matrix den Fortschritt hinsichtlich der Erwartungen, erkenne Stärken an und bespreche die Entwicklungsfelder. Setze die Ziele basierend auf der Sprache der Matrix.</p>
-                    
-                    <p>🗓️ Beim Jahresgespräch: Bewerte die Gesamtleistung zum Jahresende anhand der Level-Definitionen. Nutze diese Einschätzung für Entscheidungen zu Anerkennung, Beförderungsreife oder notwendigen Entwicklungsmaßnahmen.</p>
-                    
-                    <h4><strong>3. Entwicklungsgespräche führen</strong></h4>
-                    <p>Vergleiche regelmäßig die aktuelle Leistung deiner Teammitglieder mit der Matrix, um Entwicklungslücken zu identifizieren. Wenn jemand sein aktuelles Level übertrifft, bestimme genau, was noch für den nächsten Schritt fehlt – und mache daraus einen Entwicklungsplan.</p>
-                    
-                    <h4><strong>4. Konsistente Entscheidungen zur Weiterentwicklung treffen</strong></h4>
-                    <p>Alle Entscheidungen zu Beförderungen, Titeländerungen oder Neueinstufungen müssen auf der Matrix basieren. Leistung allein reicht nicht – die Person muss die Erwartungen in Denkweise, Verhalten und Wirkung erfüllen. Die Nutzung der Matrix hilft, subjektive Verzerrungen zu vermeiden, sorgt für Konsistenz und stärkt das Vertrauen in unsere internen Entwicklungsprozesse.</p>
-                    
-                    <h4><strong>5. Klar und gezielt coachen</strong></h4>
-                    <p>Beziehe dich bei Feedback oder Zielvereinbarungen direkt auf die Matrix. Sie bietet eine klare, gemeinsame Definition von Erwartungen und ermöglicht es Teammitgliedern, Feedback konkret und umsetzbar zu verstehen.</p>
-                    
-                    <h4><strong>6. Verschiedene Entwicklungspfade anerkennen</strong></h4>
-                    <p>Hebe hervor, dass Mister Spex sowohl Expertenkarrieren als auch Führungskarrieren wertschätzt. Nutze die Matrix, um individuelle Entwicklung gezielt zu fördern und sicherzustellen, dass Anerkennung und Aufstieg den tatsächlichen Beitrag widerspiegeln – nicht nur Teamgröße oder Sichtbarkeit.</p>
-                    
-                    <h4><strong>7. Vorurteile minimieren</strong></h4>
-                    <p>Die Matrix ist ein zentrales Instrument zur Förderung von Chancengleichheit. Nutze sie einheitlich für das gesamte Team – unabhängig von Persönlichkeit, Hintergrund oder Arbeitsstil. Vermeide Annahmen oder informelle Vergleiche. Wenn jemand die Erwartungen nicht erfüllt, benenne konkret, welche Verhaltensweisen fehlen, und führe das Gespräch konstruktiv, basierend auf der Matrix.</p>`,
-                    en: `<h3><strong>For Managers: How You Are Expected to Use This Matrix</strong></h3>
-                    <p>The <strong>Global Career Matrix is a core management tool</strong> at Mister Spex. You are expected to use it actively and consistently to:</p>
-                    
-                    <ul>
-                        <li><strong>evaluate performance objectively,</strong></li>
-                        <li><strong>support employee development,</strong> and</li>
-                        <li><strong>make fair, evidence-based, and bias-resistant decisions</strong> on progression, recognition, and promotion.</li>
-                    </ul>
-                    
-                    <p>This matrix is not optional guidance — it is the foundation for how we define and assess performance and growth. Its consistent use is essential to ensure fairness, transparency, and trust across the company.</p>
-                    
-                    <h4><strong>Manager Responsibilities:</strong></h4>
-                    
-                    <h4><strong>1. Clarify expectations</strong></h4>
-                    <p>Set clear, role-specific expectations with each team member — especially during onboarding, after role changes, or when performance concerns arise. Use the matrix to define what "good" looks like in terms of ownership, collaboration, and mindset at their level.</p>
-                    
-                    <h4><strong>2. Evaluate fairly during performance reviews</strong></h4>
-                    <p>Use the matrix as the primary reference in both <strong>mid-year check-ins and annual performance reviews.</strong> Evaluate observed behaviors and delivered outcomes against the level definitions — not personal impressions or comparisons with others. This is critical for minimizing bias and creating a fair and transparent review process.</p>
-                    
-                    <p>🗓️ At the <strong>half-year check-in</strong>: Use the matrix to review progress toward expectations, recognize strengths, and discuss areas for development. Set goals based on matrix language.</p>
-                    
-                    <p>🗓️ At the <strong>annual review</strong>: Evaluate year-end performance holistically against the level definitions. Use this assessment to inform decisions about recognition, promotion readiness, or needed development efforts.</p>
-                    
-                    <h4><strong>3. Guide development conversations</strong></h4>
-                    <p>Regularly compare your team member's current performance to the matrix to identify development gaps. When someone is exceeding their level, pinpoint exactly what's still missing to move up, and turn that into a development plan.</p>
-                    
-                    <h4><strong>4. Make consistent progression decisions</strong></h4>
-                    <p>All decisions around promotion, title changes, or re-leveling must be based on the matrix. Performance alone is not enough - the individual must meet the expectations in mindset, behavior, and impact. Using the matrix helps remove subjective bias, ensures consistency, and builds trust in our internal development processes.</p>
-                    
-                    <h4><strong>5. Coach with clarity</strong></h4>
-                    <p>When giving feedback or setting goals, reference the matrix directly. It provides a clear, shared definition of expectations and allows team members to understand feedback in concrete, actionable terms.</p>
-                    
-                    <h4><strong>6. Recognize different growth paths</strong></h4>
-                    <p>Reinforce that Mister Spex values both expert career paths and people leadership. Use the matrix to support tailored growth for each individual, and make sure recognition and advancement reflect contribution - not just team size or visibility.</p>
-                    
-                    <h4><strong>7. Mitigate bias</strong></h4>
-                    <p>The matrix is a key tool in promoting equity. Apply it uniformly across your team, regardless of personality, background, or working style. Avoid assumptions or informal comparisons. If someone isn't meeting expectations, be specific about which behaviors are missing and use the matrix to guide that conversation constructively.</p>`
-                }
-            }
-        };
-
-        // ===== Main Application =====
-        class CareerFrameworkApp {
-            constructor() {
-                this.lang = 'de';
-                this.page = 1;
-                this.subPage = 'intro';
-                this.who = null;
-                this.baseLevel = '00';
-                this.selectedLevel = '00';
-                
-                this.levels = [
-                    { id: '00', label: { de: 'Assistant (Management Level 00)', en: 'Assistant (Management Level 00)' } },
-                    { id: '01', label: { de: 'Junior (Management Level 01)', en: 'Junior (Management Level 01)' } },
-                    { id: '02', label: { de: 'Associate (Management Level 02)', en: 'Associate (Management Level 02)' } },
-                    { id: '03', label: { de: 'Senior (Management Level 03)', en: 'Senior (Management Level 03)' } },
-                    { id: '04', label: { de: 'Lead (Management Level 04)', en: 'Lead (Management Level 04)' } },
-                    { id: '05', label: { de: 'Principal (Management Level 05)', en: 'Principal (Management Level 05)' } },
-                    { id: '06', label: { de: 'Director (Management Level 06)', en: 'Director (Management Level 06)' } },
-                    { id: '07', label: { de: 'Vice President (Management Level 07)', en: 'Vice President (Management Level 07)' } }
-                ];
-                
-                this.render();
-            }
-
-            t(de, en) {
-                return this.lang === 'de' ? de : en;
-            }
-
-            translateDomain(domain) {
-                const translations = {
-                    'Execution & Impact': this.lang === 'de' ? 'Umsetzung & Wirkung' : 'Execution & Impact',
-                    'Depth & Development': this.lang === 'de' ? 'Wissen & Entwicklung' : 'Depth & Development',
-                    'Relationships & Communication': this.lang === 'de' ? 'Beziehungen & Kommunikation' : 'Relationships & Communication',
-                    'Strategy & Creativity': this.lang === 'de' ? 'Strategie & Kreativität' : 'Strategy & Creativity'
-                };
-                return translations[domain] || domain;
-            }
-
-            getRightLevel() {
-                const idx = this.levels.findIndex(l => l.id === this.baseLevel);
-                return this.levels[Math.min(idx + 1, this.levels.length - 1)].id;
-            }
-
-            getSimplifiedLabel(levelId) {
-                const levelData = this.levels.find(l => l.id === levelId);
-                if (!levelData) return `Level ${levelId}`;
-                const fullLabel = levelData.label[this.lang];
-                return fullLabel.replace('Management Level ', '');
-            }
-
-            render() {
-                const root = document.getElementById('root');
-                root.innerHTML = '';
-                root.style.background = '#ffffff';
-                root.className = 'w-full min-h-full p-6 space-y-6';
-
-                const header = this.createHeader();
-                root.appendChild(header);
-
-                const nav = this.createNavigation();
-                root.appendChild(nav);
-
-                const content = this.createContent();
-                root.appendChild(content);
-            }
-
-            createHeader() {
-                const header = document.createElement('div');
-                header.className = 'flex items-center justify-between flex-wrap gap-4';
-
-                const title = document.createElement('h1');
-                title.className = 'text-2xl font-bold';
-                title.style.color = '#424D35';
-                title.textContent = 'Mister Spex Global Career Framework';
-
-                const langButton = document.createElement('button');
-                langButton.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300 border bg-white';
-                langButton.style.color = '#000000';
-                langButton.style.borderColor = '#E5E5E5';
-                langButton.textContent = `🌐 ${this.lang === 'de' ? 'EN' : 'DE'}`;
-                langButton.onclick = () => {
-                    this.lang = this.lang === 'de' ? 'en' : 'de';
-                    this.render();
-                };
-
-                header.appendChild(title);
-                header.appendChild(langButton);
-
-                return header;
-            }
-
-            createNavigation() {
-                const nav = document.createElement('nav');
-                nav.className = 'flex gap-2 flex-wrap';
-                nav.setAttribute('role', 'navigation');
-                nav.setAttribute('aria-label', 'Main navigation');
-
-                const pages = [
-                    { id: 1, label: this.t('Einleitung', 'Introduction') },
-                    { id: 2, label: this.t('Wie benutze ich die Matrix', 'How to use') },
-                    { id: 3, label: this.t('Matrix', 'Matrix') },
-                    { id: 4, label: this.t('Matrix & Vergleich', 'Matrix & Compare') }
-                ];
-
-                pages.forEach(page => {
-                    const button = document.createElement('button');
-                    button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
-                    
-                    if (this.page === page.id) {
-                        button.style.backgroundColor = '#424D35';
-                        button.style.color = '#ffffff';
-                    } else {
-                        button.className += ' border bg-white';
-                        button.style.color = '#000000';
-                        button.style.borderColor = '#E5E5E5';
-                    }
-                    
-                    button.textContent = `${page.id}. ${page.label}`;
-                    button.onclick = () => {
-                        this.page = page.id;
-                        if (page.id === 1) this.subPage = 'intro';
-                        if (page.id === 3) this.selectedLevel = '00';
-                        this.render();
-                    };
-                    nav.appendChild(button);
-                });
-
-                return nav;
-            }
-
-            createContent() {
-                const content = document.createElement('main');
-                content.setAttribute('role', 'main');
-
-                if (this.page === 1) {
-                    content.appendChild(this.createPage1());
-                } else if (this.page === 2) {
-                    content.appendChild(this.createPage2());
-                } else if (this.page === 3) {
-                    content.appendChild(this.createPage3());
-                } else if (this.page === 4) {
-                    content.appendChild(this.createPage4());
-                }
-
-                return content;
-            }
-
-            createPage1() {
-                const container = document.createElement('div');
-                container.className = 'space-y-4';
-
-                const subNav = document.createElement('div');
-                subNav.className = 'flex gap-2 flex-wrap';
-
-                ['intro', 'principles'].forEach(sub => {
-                    const button = document.createElement('button');
-                    button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
-                    
-                    if (this.subPage === sub) {
-                        button.style.backgroundColor = '#424D35';
-                        button.style.color = '#ffffff';
-                    } else {
-                        button.className += ' border bg-white';
-                        button.style.color = '#000000';
-                        button.style.borderColor = '#E5E5E5';
-                    }
-                    
-                    button.textContent = this.t(
-                        sub === 'intro' ? 'Einleitung' : 'Grundprinzipien',
-                        sub === 'intro' ? 'Introduction' : 'Key Principles'
-                    );
-                    button.onclick = () => {
-                        this.subPage = sub;
-                        this.render();
-                    };
-                    subNav.appendChild(button);
-                });
-
-                container.appendChild(subNav);
-
-                const section = document.createElement('div');
-                section.className = 'rounded-2xl shadow-sm border p-6';
-                section.style.background = '#FAF3E8';
-                section.style.borderColor = '#E5E5E5';
-                
-                const sectionTitle = document.createElement('h2');
-                sectionTitle.className = 'text-xl font-semibold mb-3';
-                sectionTitle.style.color = '#000000';
-                sectionTitle.textContent = this.subPage === 'intro' 
-                    ? this.t('Einleitung', 'Introduction')
-                    : this.t('Grundprinzipien', 'Key Principles');
-                
-                const prose = document.createElement('div');
-                prose.className = 'prose max-w-none text-sm leading-6';
-                prose.style.color = '#000000';
-                prose.innerHTML = CONTENT[this.subPage][this.lang];
-                
-                section.appendChild(sectionTitle);
-                section.appendChild(prose);
-                container.appendChild(section);
-
-                return container;
-            }
-
-            createPage2() {
-                const container = document.createElement('div');
-                container.className = 'space-y-4';
-
-                const roleButtons = document.createElement('div');
-                roleButtons.className = 'flex gap-2 flex-wrap';
-
-                ['employee', 'manager'].forEach(role => {
-                    const button = document.createElement('button');
-                    button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
-                    
-                    if (this.who === role) {
-                        button.style.backgroundColor = '#424D35';
-                        button.style.color = '#ffffff';
-                    } else {
-                        button.className += ' border bg-white';
-                        button.style.color = '#000000';
-                        button.style.borderColor = '#E5E5E5';
-                    }
-                    
-                    button.textContent = this.t(
-                        role === 'employee' ? 'Mitarbeitende/r' : 'Führungskraft',
-                        role === 'employee' ? 'Employee' : 'Manager'
-                    );
-                    button.onclick = () => {
-                        this.who = role;
-                        this.render();
-                    };
-                    roleButtons.appendChild(button);
-                });
-
-                container.appendChild(roleButtons);
-
-                if (this.who) {
-                    const section = document.createElement('div');
-                    section.className = 'rounded-2xl shadow-sm border p-6';
-                    section.style.background = '#FAF3E8';
-                    section.style.borderColor = '#E5E5E5';
-                    
-                    const sectionTitle = document.createElement('h2');
-                    sectionTitle.className = 'text-xl font-semibold mb-3';
-                    sectionTitle.style.color = '#000000';
-                    sectionTitle.textContent = this.who === 'employee' 
-                        ? this.t('Wie nutze ich die Matrix (Mitarbeitende/r)', 'How to use (Employee)')
-                        : this.t('Wie nutze ich die Matrix (Führungskräfte)', 'How to use (Manager)');
-                    
-                    const prose = document.createElement('div');
-                    prose.className = 'prose max-w-none text-sm leading-6';
-                    prose.style.color = '#000000';
-                    prose.innerHTML = CONTENT.how[this.who][this.lang];
-                    
-                    section.appendChild(sectionTitle);
-                    section.appendChild(prose);
-                    container.appendChild(section);
-                } else {
-                    const placeholder = document.createElement('div');
-                    placeholder.className = 'rounded-2xl shadow-sm border p-6';
-                    placeholder.style.background = '#FAF3E8';
-                    placeholder.style.borderColor = '#E5E5E5';
-                    placeholder.style.color = '#000000';
-                    placeholder.textContent = this.t('Bitte wählen Sie eine Rolle aus.', 'Please select a role.');
-                    container.appendChild(placeholder);
-                }
-
-                return container;
-            }
-
-            createPage3() {
-                const container = document.createElement('div');
-                container.className = 'space-y-4';
-
-                const title = document.createElement('h2');
-                title.className = 'text-xl font-semibold mb-3';
-                title.style.color = '#000000';
-                title.textContent = this.t('Management Level Details', 'Management Level Details');
-                container.appendChild(title);
-
-                const levelNav = document.createElement('div');
-                levelNav.className = 'flex gap-2 flex-wrap';
-
-                this.levels.forEach(level => {
-                    const button = document.createElement('button');
-                    button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
-                    
-                    if (this.selectedLevel === level.id) {
-                        button.style.backgroundColor = '#424D35';
-                        button.style.color = '#ffffff';
-                    } else {
-                        button.className += ' border bg-white';
-                        button.style.color = '#000000';
-                        button.style.borderColor = '#E5E5E5';
-                    }
-                    
-                    button.textContent = this.getSimplifiedLabel(level.id);
-                    button.onclick = () => {
-                        this.selectedLevel = level.id;
-                        this.render();
-                    };
-                    levelNav.appendChild(button);
-                });
-
-                container.appendChild(levelNav);
-
-                const levelCard = this.createSingleLevelCard(this.selectedLevel);
-                container.appendChild(levelCard);
-
-                return container;
-            }
-
-            createSingleLevelCard(levelId) {
-                const card = document.createElement('div');
-                card.className = 'rounded-xl shadow-sm border p-6 space-y-4';
-                card.style.background = '#FAF3E8';
-                card.style.borderColor = '#E5E5E5';
-
-                const title = document.createElement('h3');
-                title.className = 'font-semibold text-xl mb-4';
-                title.style.color = '#000000';
-                title.textContent = this.getSimplifiedLabel(levelId);
-                card.appendChild(title);
-
-                DOMAINS.forEach(domain => {
-                    const domainTitle = document.createElement('h4');
-                    domainTitle.className = 'text-base font-semibold mb-2 mt-4';
-                    domainTitle.style.color = '#000000';
-                    domainTitle.textContent = this.translateDomain(domain);
-                    
-                    const domainContent = document.createElement('div');
-                    domainContent.className = 'prose max-w-none text-sm';
-                    domainContent.style.color = '#000000';
-                    domainContent.innerHTML = (MATRIX[levelId] && MATRIX[levelId][domain]) 
-                        ? MATRIX[levelId][domain][this.lang] 
-                        : '<p>—</p>';
-                    
-                    card.appendChild(domainTitle);
-                    card.appendChild(domainContent);
-                });
-
-                return card;
-            }
-
-            createPage4() {
-                const container = document.createElement('div');
-                container.className = 'space-y-4';
-
-                const title = document.createElement('h2');
-                title.className = 'text-xl font-semibold';
-                title.style.color = '#000000';
-                title.textContent = this.t('Level Vergleich', 'Level Comparison');
-                container.appendChild(title);
-
-                const selectorContainer = document.createElement('div');
-                selectorContainer.className = 'flex items-center gap-3 flex-wrap';
-
-                const label = document.createElement('label');
-                label.className = 'text-sm font-medium';
-                label.style.color = '#000000';
-                label.textContent = this.t('Ausgangslevel', 'Base level');
-                label.htmlFor = 'level-selector';
-
-                const select = document.createElement('select');
-                select.id = 'level-selector';
-                select.className = 'border rounded-md px-3 py-2';
-                select.style.color = '#000000';
-                select.style.borderColor = '#E5E5E5';
-                select.onchange = (e) => {
-                    this.baseLevel = e.target.value;
-                    this.render();
-                };
-
-                this.levels.slice(0, -1).forEach(level => {
-                    const option = document.createElement('option');
-                    option.value = level.id;
-                    option.textContent = level.label[this.lang];
-                    option.selected = level.id === this.baseLevel;
-                    select.appendChild(option);
-                });
-
-                const arrow = document.createElement('span');
-                arrow.textContent = '→';
-                arrow.style.color = '#000000';
-
-                const rightLevelLabel = document.createElement('span');
-                rightLevelLabel.className = 'text-sm font-semibold';
-                rightLevelLabel.style.color = '#000000';
-                const rightLevel = this.getRightLevel();
-                rightLevelLabel.textContent = this.levels.find(l => l.id === rightLevel)?.label[this.lang];
-                
-                selectorContainer.appendChild(label);
-                selectorContainer.appendChild(select);
-                selectorContainer.appendChild(arrow);
-                selectorContainer.appendChild(rightLevelLabel);
-                container.appendChild(selectorContainer);
-
-                const grid = document.createElement('div');
-                grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
-
-                [this.baseLevel, rightLevel].forEach(levelId => {
-                    const card = this.createLevelCard(levelId);
-                    grid.appendChild(card);
-                });
-
-                container.appendChild(grid);
-                return container;
-            }
-
-            createLevelCard(levelId) {
-                const card = document.createElement('div');
-                card.className = 'rounded-xl shadow-sm border p-4 space-y-3';
-                card.style.background = '#FAF3E8';
-                card.style.borderColor = '#E5E5E5';
-
-                const title = document.createElement('h3');
-                title.className = 'font-semibold text-lg';
-                title.style.color = '#000000';
-                const levelData = this.levels.find(l => l.id === levelId);
-                title.textContent = levelData ? levelData.label[this.lang] : `Level ${levelId}`;
-                card.appendChild(title);
-
-                DOMAINS.forEach(domain => {
-                    const domainTitle = document.createElement('h4');
-                    domainTitle.className = 'text-sm font-semibold mb-1';
-                    domainTitle.style.color = '#000000';
-                    domainTitle.textContent = this.translateDomain(domain);
-                    
-                    const domainContent = document.createElement('div');
-                    domainContent.className = 'prose max-w-none text-xs';
-                    domainContent.style.color = '#000000';
-                    domainContent.innerHTML = (MATRIX[levelId] && MATRIX[levelId][domain]) 
-                        ? MATRIX[levelId][domain][this.lang] 
-                        : '<p>—</p>';
-                    
-                    card.appendChild(domainTitle);
-                    card.appendChild(domainContent);
-                });
-
-                return card;
-            }
+          }
+        }
+      };
+
+      const DOMAINS = ['Execution & Impact', 'Depth & Development', 'Relationships & Communication', 'Strategy & Creativity'];
+      const MATRIX = CAREER_DATA;
+
+      // Additional content
+      const CONTENT = {
+        intro: {
+          de: `<p>Unsere Job-Architektur basiert auf einem globalen Matrix-Framework, das dazu dient, Klarheit, Einheitlichkeit und Transparenz über alle Rollen und Funktionen hinweg sicherzustellen.</p>
+<p>Jede Rolle ist in eine stufenbasierte Struktur eingebettet, die einen wachsenden Verantwortungsumfang, zunehmende Komplexität und größere Wirkung widerspiegelt.</p>
+<h3><strong>Wozu dient die Matrix?</strong></h3>
+<p>Orientierungshilfe für Mitarbeitende, um ihre Entwicklung zu planen und ihren Karriereweg bewusst zu gestalten.</p>
+<p>Entscheidungsgrundlage für Führungskräfte, insbesondere bei Leistungsbeurteilungen und Beförderungen.</p>
+<p>Navigationsinstrument für die Organisation, um Wachstum zu steuern und die Ausrichtung an unserer Unternehmensstrategie sicherzustellen.</p>`,
+          en: `<p>Our job architecture is built as a global matrix framework, designed to ensure clarity, consistency, and transparency across roles and functions.</p>
+<p>Each role is defined within a level-based structure, which reflects increasing scope, complexity, and responsibility.</p>
+<h3><strong>This matrix serves as:</strong></h3>
+<p>A clear guideline for employees to grow and navigate their careers.</p>
+<p>A decision-making tool for managers during performance reviews and promotions.</p>
+<p>A compass for organizational growth and alignment with our company strategy.</p>`
+        },
+
+        // ✅ FIXED: principles block (string is properly closed before en:)
+        principles: {
+          de: `<h3><strong>Unsere Stellenarchitektur folgt vier Grundprinzipien:</strong></h3>
+
+<h4><strong>📈 Kumulative Erwartungen</strong></h4>
+<ul>
+  <li>Jedes höhere Rollenprofil umfasst automatisch die Kompetenzen und Verantwortlichkeiten aller darunterliegenden Ebenen.</li>
+  <li>Der Aufstieg in eine neue Stufe spiegelt daher nicht nur tiefere Fachkenntnis oder größeren Einfluss wider, sondern auch die Fähigkeit,</li>
+  <li>die Erwartungen der vorherigen Ebenen kontinuierlich mit mehr Eigenständigkeit und spürbarer Wirkung zu erfüllen.</li>
+</ul>
+
+<h4><strong>⚖️ Funktionsübergreifende Konsistenz</strong></h4>
+<ul>
+  <li>Auch wenn sich die fachlichen Schwerpunkte unterscheiden, sind die Joblevel bereichsübergreifend aufeinander abgestimmt.</li>
+  <li>Dadurch stellen wir Fairness und Einheitlichkeit in Entwicklung, Anerkennung und beruflichem Fortschritt innerhalb der gesamten Organisation sicher.</li>
+</ul>
+
+<h4><strong>🎯 Rolle vs. Titel</strong></h4>
+<ul>
+  <li>Tatsächlicher Beitrag zur Zielerreichung ist entscheidend</li>
+  <li>Flexibilität bei Aufgabengestaltung</li>
+  <li>Klare Entwicklungspfade und nachvollziehbare Anforderungen</li>
+</ul>
+
+<h4><strong>🚀 Leistung & Weiterentwicklung</strong></h4>
+<ul>
+  <li>Unsere Stellenarchitektur hilft uns dabei, Leistung fair zu beurteilen, Beförderungen transparent zu gestalten und deine berufliche Entwicklung gezielt zu unterstützen.</li>
+  <li>Sie zeigt klar auf, was gute Arbeit auf jeder Ebene ausmacht, sowohl in deinem täglichen Einfluss als auch in deinem Verhalten.</li>
+  <li>So schaffen wir ein gemeinsames Verständnis davon, was wir voneinander erwarten können,</li>
+  <li>erleichtern interne Wechselmöglichkeiten und begleiten dich auf deinem persönlichen Entwicklungsweg bei Mister Spex.</li>
+</ul>`,
+          en: `<h3><strong>Key Principles:</strong></h3>
+
+<h4><strong>📈 Cumulative Expectations</strong></h4>
+<ul>
+  <li>Each higher level builds on previous ones</li>
+  <li>Includes all competencies and responsibilities from levels below</li>
+  <li>Greater autonomy and impact with advancement</li>
+</ul>
+
+<h4><strong>⚖️ Cross-Functional Consistency</strong></h4>
+<ul>
+  <li>Job levels aligned across all departments</li>
+  <li>Ensures fairness in development and progression</li>
+  <li>Consistent recognition across the organization</li>
+</ul>
+
+<h4><strong>🎯 Role vs. Title</strong></h4>
+<ul>
+  <li>Emphasizes core contribution and scope</li>
+  <li>Supports flexibility in role design</li>
+  <li>Maintains clear development paths</li>
+</ul>
+
+<h4><strong>🚀 Performance & Progression</strong></h4>
+<ul>
+  <li>Guides performance evaluations and promotions</li>
+  <li>Defines excellence at each level</li>
+  <li>Covers both impact and behavior</li>
+</ul>
+
+<p><strong>This approach:</strong> Fosters shared understanding, promotes internal mobility, and supports individual growth within Mister Spex.</p>`
+        },
+
+        how: {
+          employee: {
+            de: `<p>Unsere Karrierematrix zeigt dir, was in deiner aktuellen Rolle erwartet wird und welche Möglichkeiten du hast, dich bei Mister Spex weiterzuentwickeln. Egal, ob du in deiner jetzigen Rolle weiter wachsen oder dich auf neue Herausforderungen vorbereiten möchtest.</p>
+
+<p><strong>Du kannst sie als praktisches Werkzeug nutzen, um deine Entwicklung aktiv zu gestalten:</strong></p>
+
+<h4><strong>1. Verstehe dein aktuelles Level</strong></h4>
+<p>Schau dir den Abschnitt an, der zu deiner aktuellen Rolle passt. Dort findest du eine Beschreibung, was Erfolg in deiner Position bedeutet, welches Verhalten wichtig ist und wie du dich im Laufe der Zeit weiterentwickeln kannst.</p>
+
+<h4><strong>2. Entdecke was als Nächstes kommt</strong></h4>
+<p>Lies dir das nächsthöhere Level durch. So bekommst du ein Gefühl dafür, welche zusätzlichen Aufgaben, Verantwortlichkeiten und Kompetenzen dort gefragt sind. Diese Unterschiede helfen dir, konkrete Entwicklungsziele zu setzen.</p>
+
+<h4><strong>3. Reflektiere regelmäßig</strong></h4>
+<p>Vergleiche deine tägliche Arbeit mit den Beschreibungen in der Matrix. Wo erfüllst du die Erwartungen bereits sehr gut? Und in welchen Bereichen kannst du dich noch verbessern? Diese Selbstreflexion hilft dir, gezielt zu wachsen.</p>
+
+<h4><strong>4. Bereite dich auf Feedbackgespräche vor</strong></h4>
+<p>Komm gut vorbereitet zu deinen Check-ins oder Leistungsbeurteilungen. Nimm Beispiele mit, die zeigen, wie du die Erwartungen deiner Rolle erfüllst. So machst du deinen Fortschritt sichtbar und übernimmst Verantwortung für deine Entwicklung. Warte nicht darauf, dass deine Führungskraft alles erkennt – bring dich selbst aktiv ein.</p>
+
+<h4><strong>5. Plane dein Wachstum</strong></h4>
+<p>Besprich mit deiner Führungskraft, welche Schritte für dich als Nächstes wichtig sind. Wähle ein oder zwei Schwerpunkte aus – zum Beispiel Zusammenarbeit, Führungsverhalten oder fachliche Weiterentwicklung – und definiert gemeinsam klare, erreichbare Ziele.</p>
+
+<h4><strong>6. Gestalte deinen Karriereweg</strong></h4>
+<p>Du hast die Wahl, welchen Weg du gehen möchtest. Die Matrix zeigt dir verschiedene Möglichkeiten auf – von der Expertenlaufbahn über bereichsübergreifende Entwicklung bis hin zur Führung. Wähle den Weg, der zu deinen Stärken und Interessen passt, und nutze die Matrix als Orientierung für deine nächsten Schritte.</p>
+
+<h4><strong>Wie die Matrix mit Kompetenzen verbunden ist</strong></h4>
+<p>✅ <strong>Die Matrix</strong> = was insgesamt erwartet wird<br>
+✅ <strong>Kompetenzen</strong> = wie du das in der Praxis umsetzt</p>
+
+<p>Gemeinsam bieten dir Matrix und Kompetenzen:</p>
+<ul>
+  <li>einen klaren Überblick über deine Entwicklungsmöglichkeiten,</li>
+  <li>eine gemeinsame Sprache für Feedback- und Entwicklungsgespräche,</li>
+  <li>und eine transparente Grundlage für Coaching, Anerkennung und Karriereentscheidungen.</li>
+</ul>
+<p><strong>Nutze in deinen Check-ins und Bewertungen beide Systeme: die globale Karrierematrix, um die Erwartungen zu verstehen, und die Kompetenzen, um zu zeigen, wie du sie im Alltag umsetzt. So kannst du deinen Fortschritt gezielt steuern und sichtbar machen.</strong></p>`,
+            en: `<p>The Matrix defines what's expected in your role and outlines how to grow at Mister Spex - whether you're focused on mastering your current position or preparing for new challenges.</p>
+
+<p><strong>Use it to:</strong></p>
+
+<h4><strong>1. Understand your current level</strong></h4>
+<p>Find the section in the matrix that matches your current job level. It describes what success looks like in your role, what behaviors are expected, and how you're meant to grow over time.</p>
+
+<h4><strong>2. Explore what's next</strong></h4>
+<p>Read the next level above yours to understand what changes in scope, ownership, and responsibility. Use that gap to guide your development priorities.</p>
+
+<h4><strong>3. Self-assess and reflect</strong></h4>
+<p>Benchmark yourself. Compare your daily work, behaviors, and outcomes against your level and the one above. Where are you exceeding expectations? Where are you not yet showing next-level capability?</p>
+
+<h4><strong>4. Prepare for feedback talks and reviews</strong></h4>
+<p>Come to check-ins or performance reviews with concrete examples that reflect the expectations at your level. This shows ownership of your development and makes your growth visible. Don't wait for your manager to connect the dots - take the lead in highlighting your progress.</p>
+
+<h4><strong>5. Plan your growth</strong></h4>
+<p>Use the matrix to co-create specific, measurable growth goals with your manager, aligned to your current level and the one above. Prioritize 1–2 key areas (e.g. collaboration, leadership behaviors, technical expertise).</p>
+
+<h4><strong>6. Own your career path</strong></h4>
+<p>Take control of your career. The matrix maps multiple paths: expert, cross-functional, and leadership. Choose your direction and use the matrix to chart concrete next steps.</p>
+
+<h4><strong>How the Matrix Connects to Competencies</strong></h4>
+<p>✅ <strong>The Matrix</strong> = what's expected overall<br>
+✅ <strong>Competencies</strong> = how you bring it to life</p>
+
+<p>Together, they give you:</p>
+<ul>
+  <li>a clear development path (from where you are to where you want to go),</li>
+  <li>a common language for performance and feedback conversations, and</li>
+  <li>a consistent basis for coaching, recognition, and career decisions.</li>
+</ul>
+<p><strong>In your check-ins and reviews, refer to both the Global Career Matrix and your Competencies to align your current work against the expectations set our in this framework.</strong></p>`
+          },
+
+          manager: {
+            de: `<h3><strong>Für Führungskräfte: So soll die Matrix benutzt werden</strong></h3>
+<p>Die <strong>Global Career Matrix ist ein zentrales Führungsinstrument</strong> bei Mister Spex. Es wird von dir erwartet, sie aktiv und konsequent zu verwenden, um:</p>
+
+<ul>
+  <li><strong>Leistung objektiv zu bewerten,</strong></li>
+  <li><strong>die Entwicklung von Mitarbeitenden zu fördern</strong> und</li>
+  <li><strong>faire, evidenzbasierte und vorurteilsfreie Entscheidungen</strong> über Weiterentwicklung, Anerkennung und Beförderung zu treffen.</li>
+</ul>
+
+<p>Diese Matrix ist keine optionale Orientierung – sie bildet die Grundlage dafür, wie wir Leistung und Wachstum definieren und beurteilen. Ihre konsequente Anwendung ist entscheidend, um Fairness, Transparenz und Vertrauen im gesamten Unternehmen zu gewährleisten.</p>
+
+<h4><strong>Verantwortlichkeiten von Führungskräften:</strong></h4>
+
+<h4><strong>1. Erwartungen klären</strong></h4>
+<p>Lege mit jedem Teammitglied klare, rollenbezogene Erwartungen fest – insbesondere beim Onboarding, nach Rollenwechseln oder bei Leistungsfragen. Nutze die Matrix, um zu definieren, was „gut" bedeutet in Bezug auf Eigenverantwortung, Zusammenarbeit und Denkweise auf dem jeweiligen Level.</p>
+
+<h4><strong>2. Faire Bewertung bei Leistungsbeurteilungen</strong></h4>
+<p>Die Matrix dient als Hauptreferenz bei den <strong>halbjährlichen Check-ins und den jährlichen Leistungsbeurteilungen.</strong> Bewerte beobachtetes Verhalten und erzielte Ergebnisse anhand der Level-Definitionen – nicht nach persönlichen Eindrücken oder Vergleichen mit anderen. Das ist entscheidend, um Vorurteile zu minimieren und einen fairen, transparenten Bewertungsprozess zu schaffen.</p>
+
+<p>🗓️ Beim Halbjahres-Check-in: Überprüfe mit der Matrix den Fortschritt hinsichtlich der Erwartungen, erkenne Stärken an und bespreche die Entwicklungsfelder. Setze die Ziele basierend auf der Sprache der Matrix.</p>
+
+<p>🗓️ Beim Jahresgespräch: Bewerte die Gesamtleistung zum Jahresende anhand der Level-Definitionen. Nutze diese Einschätzung für Entscheidungen zu Anerkennung, Beförderungsreife oder notwendigen Entwicklungsmaßnahmen.</p>
+
+<h4><strong>3. Entwicklungsgespräche führen</strong></h4>
+<p>Vergleiche regelmäßig die aktuelle Leistung deiner Teammitglieder mit der Matrix, um Entwicklungslücken zu identifizieren. Wenn jemand sein aktuelles Level übertrifft, bestimme genau, was noch für den nächsten Schritt fehlt – und mache daraus einen Entwicklungsplan.</p>
+
+<h4><strong>4. Konsistente Entscheidungen zur Weiterentwicklung treffen</strong></h4>
+<p>Alle Entscheidungen zu Beförderungen, Titeländerungen oder Neueinstufungen müssen auf der Matrix basieren. Leistung allein reicht nicht – die Person muss die Erwartungen in Denkweise, Verhalten und Wirkung erfüllen. Die Nutzung der Matrix hilft, subjektive Verzerrungen zu vermeiden, sorgt für Konsistenz und stärkt das Vertrauen in unsere internen Entwicklungsprozesse.</p>
+
+<h4><strong>5. Klar und gezielt coachen</strong></h4>
+<p>Beziehe dich bei Feedback oder Zielvereinbarungen direkt auf die Matrix. Sie bietet eine klare, gemeinsame Definition von Erwartungen und ermöglicht es Teammitgliedern, Feedback konkret und umsetzbar zu verstehen.</p>
+
+<h4><strong>6. Verschiedene Entwicklungspfade anerkennen</strong></h4>
+<p>Hebe hervor, dass Mister Spex sowohl Expertenkarrieren als auch Führungskarrieren wertschätzt. Nutze die Matrix, um individuelle Entwicklung gezielt zu fördern und sicherzustellen, dass Anerkennung und Aufstieg den tatsächlichen Beitrag widerspiegeln – nicht nur Teamgröße oder Sichtbarkeit.</p>
+
+<h4><strong>7. Vorurteile minimieren</strong></h4>
+<p>Die Matrix ist ein zentrales Instrument zur Förderung von Chancengleichheit. Nutze sie einheitlich für das gesamte Team – unabhängig von Persönlichkeit, Hintergrund oder Arbeitsstil. Vermeide Annahmen oder informelle Vergleiche. Wenn jemand die Erwartungen nicht erfüllt, benenne konkret, welche Verhaltensweisen fehlen, und führe das Gespräch konstruktiv, basierend auf der Matrix.</p>`,
+            en: `<h3><strong>For Managers: How You Are Expected to Use This Matrix</strong></h3>
+<p>The <strong>Global Career Matrix is a core management tool</strong> at Mister Spex. You are expected to use it actively and consistently to:</p>
+
+<ul>
+  <li><strong>evaluate performance objectively,</strong></li>
+  <li><strong>support employee development,</strong> and</li>
+  <li><strong>make fair, evidence-based, and bias-resistant decisions</strong> on progression, recognition, and promotion.</li>
+</ul>
+
+<p>This matrix is not optional guidance — it is the foundation for how we define and assess performance and growth. Its consistent use is essential to ensure fairness, transparency, and trust across the company.</p>
+
+<h4><strong>Manager Responsibilities:</strong></h4>
+
+<h4><strong>1. Clarify expectations</strong></h4>
+<p>Set clear, role-specific expectations with each team member — especially during onboarding, after role changes, or when performance concerns arise. Use the matrix to define what "good" looks like in terms of ownership, collaboration, and mindset at their level.</p>
+
+<h4><strong>2. Evaluate fairly during performance reviews</strong></h4>
+<p>Use the matrix as the primary reference in both <strong>mid-year check-ins and annual performance reviews.</strong> Evaluate observed behaviors and delivered outcomes against the level definitions — not personal impressions or comparisons with others. This is critical for minimizing bias and creating a fair and transparent review process.</p>
+
+<p>🗓️ At the <strong>half-year check-in</strong>: Use the matrix to review progress toward expectations, recognize strengths, and discuss areas for development. Set goals based on matrix language.</p>
+
+<p>🗓️ At the <strong>annual review</strong>: Evaluate year-end performance holistically against the level definitions. Use this assessment to inform decisions about recognition, promotion readiness, or needed development efforts.</p>
+
+<h4><strong>3. Guide development conversations</strong></h4>
+<p>Regularly compare your team member's current performance to the matrix to identify development gaps. When someone is exceeding their level, pinpoint exactly what's still missing to move up, and turn that into a development plan.</p>
+
+<h4><strong>4. Make consistent progression decisions</strong></h4>
+<p>All decisions around promotion, title changes, or re-leveling must be based on the matrix. Performance alone is not enough - the individual must meet the expectations in mindset, behavior, and impact. Using the matrix helps remove subjective bias, ensures consistency, and builds trust in our internal development processes.</p>
+
+<h4><strong>5. Coach with clarity</strong></h4>
+<p>When giving feedback or setting goals, reference the matrix directly. It provides a clear, shared definition of expectations and allows team members to understand feedback in concrete, actionable terms.</p>
+
+<h4><strong>6. Recognize different growth paths</strong></h4>
+<p>Reinforce that Mister Spex values both expert career paths and people leadership. Use the matrix to support tailored growth for each individual, and make sure recognition and advancement reflect contribution - not just team size or visibility.</p>
+
+<h4><strong>7. Mitigate bias</strong></h4>
+<p>The matrix is a key tool in promoting equity. Apply it uniformly across your team, regardless of personality, background, or working style. Avoid assumptions or informal comparisons. If someone isn't meeting expectations, be specific about which behaviors are missing and use the matrix to guide that conversation constructively.</p>`
+          }
+        }
+      };
+
+      // ===== Main Application =====
+      class CareerFrameworkApp {
+        constructor() {
+          this.lang = 'de';
+          this.page = 1;
+          this.subPage = 'intro';
+          this.who = null;
+          this.baseLevel = '00';
+          this.selectedLevel = '00';
+
+          this.levels = [
+            { id: '00', label: { de: 'Assistant (Management Level 00)', en: 'Assistant (Management Level 00)' } },
+            { id: '01', label: { de: 'Junior (Management Level 01)', en: 'Junior (Management Level 01)' } },
+            { id: '02', label: { de: 'Associate (Management Level 02)', en: 'Associate (Management Level 02)' } },
+            { id: '03', label: { de: 'Senior (Management Level 03)', en: 'Senior (Management Level 03)' } },
+            { id: '04', label: { de: 'Lead (Management Level 04)', en: 'Lead (Management Level 04)' } },
+            { id: '05', label: { de: 'Principal (Management Level 05)', en: 'Principal (Management Level 05)' } },
+            { id: '06', label: { de: 'Director (Management Level 06)', en: 'Director (Management Level 06)' } },
+            { id: '07', label: { de: 'Vice President (Management Level 07)', en: 'Vice President (Management Level 07)' } }
+          ];
+
+          this.render();
         }
 
-        // Initialize the application
-        new CareerFrameworkApp();
+        t(de, en) {
+          return this.lang === 'de' ? de : en;
+        }
+
+        translateDomain(domain) {
+          const translations = {
+            'Execution & Impact': this.lang === 'de' ? 'Umsetzung & Wirkung' : 'Execution & Impact',
+            'Depth & Development': this.lang === 'de' ? 'Wissen & Entwicklung' : 'Depth & Development',
+            'Relationships & Communication': this.lang === 'de' ? 'Beziehungen & Kommunikation' : 'Relationships & Communication',
+            'Strategy & Creativity': this.lang === 'de' ? 'Strategie & Kreativität' : 'Strategy & Creativity'
+          };
+          return translations[domain] || domain;
+        }
+
+        getRightLevel() {
+          const idx = this.levels.findIndex(l => l.id === this.baseLevel);
+          return this.levels[Math.min(idx + 1, this.levels.length - 1)].id;
+        }
+
+        getSimplifiedLabel(levelId) {
+          const levelData = this.levels.find(l => l.id === levelId);
+          if (!levelData) return `Level ${levelId}`;
+          const fullLabel = levelData.label[this.lang];
+          return fullLabel.replace('Management Level ', '');
+        }
+
+        render() {
+          const root = document.getElementById('root');
+          root.innerHTML = '';
+          root.style.background = '#ffffff';
+          root.className = 'w-full min-h-full p-6 space-y-6';
+
+          const header = this.createHeader();
+          root.appendChild(header);
+
+          const nav = this.createNavigation();
+          root.appendChild(nav);
+
+          const content = this.createContent();
+          root.appendChild(content);
+        }
+
+        createHeader() {
+          const header = document.createElement('div');
+          header.className = 'flex items-center justify-between flex-wrap gap-4';
+
+          const title = document.createElement('h1');
+          title.className = 'text-2xl font-bold';
+          title.style.color = '#424D35';
+          title.textContent = 'Mister Spex Global Career Framework';
+
+          const langButton = document.createElement('button');
+          langButton.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300 border bg-white';
+          langButton.style.color = '#000000';
+          langButton.style.borderColor = '#E5E5E5';
+          langButton.textContent = `🌐 ${this.lang === 'de' ? 'EN' : 'DE'}`;
+          langButton.onclick = () => {
+            this.lang = this.lang === 'de' ? 'en' : 'de';
+            this.render();
+          };
+
+          header.appendChild(title);
+          header.appendChild(langButton);
+
+          return header;
+        }
+
+        createNavigation() {
+          const nav = document.createElement('nav');
+          nav.className = 'flex gap-2 flex-wrap';
+          nav.setAttribute('role', 'navigation');
+          nav.setAttribute('aria-label', 'Main navigation');
+
+          const pages = [
+            { id: 1, label: this.t('Einleitung', 'Introduction') },
+            { id: 2, label: this.t('Wie benutze ich die Matrix', 'How to use') },
+            { id: 3, label: this.t('Matrix', 'Matrix') },
+            { id: 4, label: this.t('Matrix & Vergleich', 'Matrix & Compare') }
+          ];
+
+          pages.forEach(page => {
+            const button = document.createElement('button');
+            button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
+
+            if (this.page === page.id) {
+              button.style.backgroundColor = '#424D35';
+              button.style.color = '#ffffff';
+            } else {
+              button.className += ' border bg-white';
+              button.style.color = '#000000';
+              button.style.borderColor = '#E5E5E5';
+            }
+
+            button.textContent = `${page.id}. ${page.label}`;
+            button.onclick = () => {
+              this.page = page.id;
+              if (page.id === 1) this.subPage = 'intro';
+              if (page.id === 3) this.selectedLevel = '00';
+              this.render();
+            };
+            nav.appendChild(button);
+          });
+
+          return nav;
+        }
+
+        createContent() {
+          const content = document.createElement('main');
+          content.setAttribute('role', 'main');
+
+          if (this.page === 1) {
+            content.appendChild(this.createPage1());
+          } else if (this.page === 2) {
+            content.appendChild(this.createPage2());
+          } else if (this.page === 3) {
+            content.appendChild(this.createPage3());
+          } else if (this.page === 4) {
+            content.appendChild(this.createPage4());
+          }
+
+          return content;
+        }
+
+        createPage1() {
+          const container = document.createElement('div');
+          container.className = 'space-y-4';
+
+          const subNav = document.createElement('div');
+          subNav.className = 'flex gap-2 flex-wrap';
+
+          ['intro', 'principles'].forEach(sub => {
+            const button = document.createElement('button');
+            button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
+
+            if (this.subPage === sub) {
+              button.style.backgroundColor = '#424D35';
+              button.style.color = '#ffffff';
+            } else {
+              button.className += ' border bg-white';
+              button.style.color = '#000000';
+              button.style.borderColor = '#E5E5E5';
+            }
+
+            button.textContent = this.t(
+              sub === 'intro' ? 'Einleitung' : 'Grundprinzipien',
+              sub === 'intro' ? 'Introduction' : 'Key Principles'
+            );
+            button.onclick = () => {
+              this.subPage = sub;
+              this.render();
+            };
+            subNav.appendChild(button);
+          });
+
+          container.appendChild(subNav);
+
+          const section = document.createElement('div');
+          section.className = 'rounded-2xl shadow-sm border p-6';
+          section.style.background = '#FAF3E8';
+          section.style.borderColor = '#E5E5E5';
+
+          const sectionTitle = document.createElement('h2');
+          sectionTitle.className = 'text-xl font-semibold mb-3';
+          sectionTitle.style.color = '#000000';
+          sectionTitle.textContent = this.subPage === 'intro'
+            ? this.t('Einleitung', 'Introduction')
+            : this.t('Grundprinzipien', 'Key Principles');
+
+          const prose = document.createElement('div');
+          prose.className = 'prose max-w-none text-sm leading-6';
+          prose.style.color = '#000000';
+          prose.innerHTML = CONTENT[this.subPage][this.lang];
+
+          section.appendChild(sectionTitle);
+          section.appendChild(prose);
+          container.appendChild(section);
+
+          return container;
+        }
+
+        createPage2() {
+          const container = document.createElement('div');
+          container.className = 'space-y-4';
+
+          const roleButtons = document.createElement('div');
+          roleButtons.className = 'flex gap-2 flex-wrap';
+
+          ['employee', 'manager'].forEach(role => {
+            const button = document.createElement('button');
+            button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
+
+            if (this.who === role) {
+              button.style.backgroundColor = '#424D35';
+              button.style.color = '#ffffff';
+            } else {
+              button.className += ' border bg-white';
+              button.style.color = '#000000';
+              button.style.borderColor = '#E5E5E5';
+            }
+
+            button.textContent = this.t(
+              role === 'employee' ? 'Mitarbeitende/r' : 'Führungskraft',
+              role === 'employee' ? 'Employee' : 'Manager'
+            );
+            button.onclick = () => {
+              this.who = role;
+              this.render();
+            };
+            roleButtons.appendChild(button);
+          });
+
+          container.appendChild(roleButtons);
+
+          if (this.who) {
+            const section = document.createElement('div');
+            section.className = 'rounded-2xl shadow-sm border p-6';
+            section.style.background = '#FAF3E8';
+            section.style.borderColor = '#E5E5E5';
+
+            const sectionTitle = document.createElement('h2');
+            sectionTitle.className = 'text-xl font-semibold mb-3';
+            sectionTitle.style.color = '#000000';
+            sectionTitle.textContent = this.who === 'employee'
+              ? this.t('Wie nutze ich die Matrix (Mitarbeitende/r)', 'How to use (Employee)')
+              : this.t('Wie nutze ich die Matrix (Führungskräfte)', 'How to use (Manager)');
+
+            const prose = document.createElement('div');
+            prose.className = 'prose max-w-none text-sm leading-6';
+            prose.style.color = '#000000';
+            prose.innerHTML = CONTENT.how[this.who][this.lang];
+
+            section.appendChild(sectionTitle);
+            section.appendChild(prose);
+            container.appendChild(section);
+          } else {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'rounded-2xl shadow-sm border p-6';
+            placeholder.style.background = '#FAF3E8';
+            placeholder.style.borderColor = '#E5E5E5';
+            placeholder.style.color = '#000000';
+            placeholder.textContent = this.t('Bitte wählen Sie eine Rolle aus.', 'Please select a role.');
+            container.appendChild(placeholder);
+          }
+
+          return container;
+        }
+
+        createPage3() {
+          const container = document.createElement('div');
+          container.className = 'space-y-4';
+
+          const title = document.createElement('h2');
+          title.className = 'text-xl font-semibold mb-3';
+          title.style.color = '#000000';
+          title.textContent = this.t('Management Level Details', 'Management Level Details');
+          container.appendChild(title);
+
+          const levelNav = document.createElement('div');
+          levelNav.className = 'flex gap-2 flex-wrap';
+
+          this.levels.forEach(level => {
+            const button = document.createElement('button');
+            button.className = 'px-4 py-2 rounded-lg font-medium transition-all duration-300';
+
+            if (this.selectedLevel === level.id) {
+              button.style.backgroundColor = '#424D35';
+              button.style.color = '#ffffff';
+            } else {
+              button.className += ' border bg-white';
+              button.style.color = '#000000';
+              button.style.borderColor = '#E5E5E5';
+            }
+
+            button.textContent = this.getSimplifiedLabel(level.id);
+            button.onclick = () => {
+              this.selectedLevel = level.id;
+              this.render();
+            };
+            levelNav.appendChild(button);
+          });
+
+          container.appendChild(levelNav);
+
+          const levelCard = this.createSingleLevelCard(this.selectedLevel);
+          container.appendChild(levelCard);
+
+          return container;
+        }
+
+        createSingleLevelCard(levelId) {
+          const card = document.createElement('div');
+          card.className = 'rounded-xl shadow-sm border p-6 space-y-4';
+          card.style.background = '#FAF3E8';
+          card.style.borderColor = '#E5E5E5';
+
+          const title = document.createElement('h3');
+          title.className = 'font-semibold text-xl mb-4';
+          title.style.color = '#000000';
+          title.textContent = this.getSimplifiedLabel(levelId);
+          card.appendChild(title);
+
+          DOMAINS.forEach(domain => {
+            const domainTitle = document.createElement('h4');
+            domainTitle.className = 'text-base font-semibold mb-2 mt-4';
+            domainTitle.style.color = '#000000';
+            domainTitle.textContent = this.translateDomain(domain);
+
+            const domainContent = document.createElement('div');
+            domainContent.className = 'prose max-w-none text-sm';
+            domainContent.style.color = '#000000';
+            domainContent.innerHTML = (MATRIX[levelId] && MATRIX[levelId][domain])
+              ? MATRIX[levelId][domain][this.lang]
+              : '<p>—</p>';
+
+            card.appendChild(domainTitle);
+            card.appendChild(domainContent);
+          });
+
+          return card;
+        }
+
+        createPage4() {
+          const container = document.createElement('div');
+          container.className = 'space-y-4';
+
+          const title = document.createElement('h2');
+          title.className = 'text-xl font-semibold';
+          title.style.color = '#000000';
+          title.textContent = this.t('Level Vergleich', 'Level Comparison');
+          container.appendChild(title);
+
+          const selectorContainer = document.createElement('div');
+          selectorContainer.className = 'flex items-center gap-3 flex-wrap';
+
+          const label = document.createElement('label');
+          label.className = 'text-sm font-medium';
+          label.style.color = '#000000';
+          label.textContent = this.t('Ausgangslevel', 'Base level');
+          label.htmlFor = 'level-selector';
+
+          const select = document.createElement('select');
+          select.id = 'level-selector';
+          select.className = 'border rounded-md px-3 py-2';
+          select.style.color = '#000000';
+          select.style.borderColor = '#E5E5E5';
+          select.onchange = (e) => {
+            this.baseLevel = e.target.value;
+            this.render();
+          };
+
+          this.levels.slice(0, -1).forEach(level => {
+            const option = document.createElement('option');
+            option.value = level.id;
+            option.textContent = level.label[this.lang];
+            option.selected = level.id === this.baseLevel;
+            select.appendChild(option);
+          });
+
+          const arrow = document.createElement('span');
+          arrow.textContent = '→';
+          arrow.style.color = '#000000';
+
+          const rightLevelLabel = document.createElement('span');
+          rightLevelLabel.className = 'text-sm font-semibold';
+          rightLevelLabel.style.color = '#000000';
+          const rightLevel = this.getRightLevel();
+          rightLevelLabel.textContent = this.levels.find(l => l.id === rightLevel)?.label[this.lang];
+
+          selectorContainer.appendChild(label);
+          selectorContainer.appendChild(select);
+          selectorContainer.appendChild(arrow);
+          selectorContainer.appendChild(rightLevelLabel);
+          container.appendChild(selectorContainer);
+
+          const grid = document.createElement('div');
+          grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+
+          [this.baseLevel, rightLevel].forEach(levelId => {
+            const card = this.createLevelCard(levelId);
+            grid.appendChild(card);
+          });
+
+          container.appendChild(grid);
+          return container;
+        }
+
+        createLevelCard(levelId) {
+          const card = document.createElement('div');
+          card.className = 'rounded-xl shadow-sm border p-4 space-y-3';
+          card.style.background = '#FAF3E8';
+          card.style.borderColor = '#E5E5E5';
+
+          const title = document.createElement('h3');
+          title.className = 'font-semibold text-lg';
+          title.style.color = '#000000';
+          const levelData = this.levels.find(l => l.id === levelId);
+          title.textContent = levelData ? levelData.label[this.lang] : `Level ${levelId}`;
+          card.appendChild(title);
+
+          DOMAINS.forEach(domain => {
+            const domainTitle = document.createElement('h4');
+            domainTitle.className = 'text-sm font-semibold mb-1';
+            domainTitle.style.color = '#000000';
+            domainTitle.textContent = this.translateDomain(domain);
+
+            const domainContent = document.createElement('div');
+            domainContent.className = 'prose max-w-none text-xs';
+            domainContent.style.color = '#000000';
+            domainContent.innerHTML = (MATRIX[levelId] && MATRIX[levelId][domain])
+              ? MATRIX[levelId][domain][this.lang]
+              : '<p>—</p>';
+
+            card.appendChild(domainTitle);
+            card.appendChild(domainContent);
+          });
+
+          return card;
+        }
+      }
+
+      // Initialize the application
+      new CareerFrameworkApp();
     </script>
- </body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
