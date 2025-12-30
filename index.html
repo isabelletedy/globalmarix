@@ -672,72 +672,92 @@
         },
 
         // ✅ FIXED: principles block (string is properly closed before en:)
-principles: {
-  de: `<h3><strong>Unsere Stellenarchitektur folgt vier Grundprinzipien:</strong></h3>
-  
-  <h4><strong>📈 Kumulative Erwartungen</strong></h4>
-  <ul>
-      <li>Jedes höhere Rollenprofil umfasst automatisch die Kompetenzen und Verantwortlichkeiten aller darunterliegenden Ebenen.</li>
-      <li>Der Aufstieg in eine neue Stufe spiegelt daher nicht nur tiefere Fachkenntnis oder größeren Einfluss wider, sondern auch die Fähigkeit,</li>
-      <li>die Erwartungen der vorherigen Ebenen kontinuierlich mit mehr Eigenständigkeit und spürbarer Wirkung zu erfüllen.</li>
-  </ul>
+<script>
+  // ... (dein CAREER_DATA bleibt wie er ist)
 
-  <h4><strong>⚖️ Funktionsübergreifende Konsistenz</strong></h4>
-  <ul>
-      <li>Auch wenn sich die fachlichen Schwerpunkte unterscheiden, sind die Joblevel bereichsübergreifend aufeinander abgestimmt.</li>
-      <li>Dadurch stellen wir Fairness und Einheitlichkeit in Entwicklung, Anerkennung und beruflichem Fortschritt innerhalb der gesamten Organisation sicher.</li>
-  </ul>
+  // Additional content
+  const CONTENT = {
+    intro: {
+      de: `<p>Unsere Job-Architektur basiert auf einem globalen Matrix-Framework, das dazu dient, Klarheit, Einheitlichkeit und Transparenz über alle Rollen und Funktionen hinweg sicherzustellen.</p>
+<p>Jede Rolle ist in eine stufenbasierte Struktur eingebettet, die einen wachsenden Verantwortungsumfang, zunehmende Komplexität und größere Wirkung widerspiegelt.</p>
+<h3><strong>Wozu dient die Matrix?</strong></h3>
+<p>Orientierungshilfe für Mitarbeitende, um ihre Entwicklung zu planen und ihren Karriereweg bewusst zu gestalten.</p>
+<p>Entscheidungsgrundlage für Führungskräfte, insbesondere bei Leistungsbeurteilungen und Beförderungen.</p>
+<p>Navigationsinstrument für die Organisation, um Wachstum zu steuern und die Ausrichtung an unserer Unternehmensstrategie sicherzustellen.</p>`,
+      en: `<p>Our job architecture is built as a global matrix framework, designed to ensure clarity, consistency, and transparency across roles and functions.</p>
+<p>Each role is defined within a level-based structure, which reflects increasing scope, complexity, and responsibility.</p>
+<h3><strong>This matrix serves as:</strong></h3>
+<p>A clear guideline for employees to grow and navigate their careers.</p>
+<p>A decision-making tool for managers during performance reviews and promotions.</p>
+<p>A compass for organizational growth and alignment with our company strategy.</p>`
+    },
 
-  <h4><strong>🎯 Rolle vs. Titel</strong></h4>
-  <ul>
-      <li>Tatsächlicher Beitrag zur Zielerreichung ist entscheidend</li>
-      <li>Flexibilität bei Aufgabengestaltung</li>
-      <li>Klare Entwicklungspfade und nachvollziehbare Anforderungen</li>
-  </ul>
+    principles: {
+      de: `<h3><strong>Unsere Stellenarchitektur folgt vier Grundprinzipien:</strong></h3>
 
-  <h4><strong>🚀 Leistung & Weiterentwicklung</strong></h4>
-  <ul>
-      <li>Unsere Stellenarchitektur hilft uns dabei, Leistung fair zu beurteilen, Beförderungen transparent zu gestalten und deine berufliche Entwicklung gezielt zu unterstützen.</li>
-      <li>Sie zeigt klar auf, was gute Arbeit auf jeder Ebene ausmacht, sowohl in deinem täglichen Einfluss als auch in deinem Verhalten.</li>
-      <li>So schaffen wir ein gemeinsames Verständnis davon, was wir voneinander erwarten können,</li>
-      <li>erleichtern interne Wechselmöglichkeiten und begleiten dich auf deinem persönlichen Entwicklungsweg bei Mister Spex.</li>
-  </ul>`,
-  en: `<h3><strong>Key Principles:</strong></h3>
-  
-  <h4><strong>📈 Cumulative Expectations</strong></h4>
-  <ul>
-      <li>Each higher level builds on previous ones</li>
-      <li>Includes all competencies and responsibilities from levels below</li>
-      <li>Greater autonomy and impact with advancement</li>
-  </ul>
+<h4><strong>📈 Kumulative Erwartungen</strong></h4>
+<ul>
+  <li>Jedes höhere Rollenprofil umfasst automatisch die Kompetenzen und Verantwortlichkeiten aller darunterliegenden Ebenen.</li>
+  <li>Der Aufstieg in eine neue Stufe spiegelt daher nicht nur tiefere Fachkenntnis oder größeren Einfluss wider, sondern auch die Fähigkeit,</li>
+  <li>die Erwartungen der vorherigen Ebenen kontinuierlich mit mehr Eigenständigkeit und spürbarer Wirkung zu erfüllen.</li>
+</ul>
 
-  <h4><strong>⚖️ Cross-Functional Consistency</strong></h4>
-  <ul>
-      <li>Job levels aligned across all departments</li>
-      <li>Ensures fairness in development and progression</li>
-      <li>Consistent recognition across the organization</li>
-  </ul>
+<h4><strong>⚖️ Funktionsübergreifende Konsistenz</strong></h4>
+<ul>
+  <li>Auch wenn sich die fachlichen Schwerpunkte unterscheiden, sind die Joblevel bereichsübergreifend aufeinander abgestimmt.</li>
+  <li>Dadurch stellen wir Fairness und Einheitlichkeit in Entwicklung, Anerkennung und beruflichem Fortschritt innerhalb der gesamten Organisation sicher.</li>
+</ul>
 
-  <h4><strong>🎯 Role vs. Title</strong></h4>
-  <ul>
-      <li>Emphasizes core contribution and scope</li>
-      <li>Supports flexibility in role design</li>
-      <li>Maintains clear development paths</li>
-  </ul>
+<h4><strong>🎯 Rolle vs. Titel</strong></h4>
+<ul>
+  <li>Tatsächlicher Beitrag zur Zielerreichung ist entscheidend</li>
+  <li>Flexibilität bei Aufgabengestaltung</li>
+  <li>Klare Entwicklungspfade und nachvollziehbare Anforderungen</li>
+</ul>
 
-  <h4><strong>🚀 Performance & Progression</strong></h4>
-  <ul>
-      <li>Guides performance evaluations and promotions</li>
-      <li>Defines excellence at each level</li>
-      <li>Covers both impact and behavior</li>
-  </ul>
+<h4><strong>🚀 Leistung & Weiterentwicklung</strong></h4>
+<ul>
+  <li>Unsere Stellenarchitektur hilft uns dabei, Leistung fair zu beurteilen, Beförderungen transparent zu gestalten und deine berufliche Entwicklung gezielt zu unterstützen.</li>
+  <li>Sie zeigt klar auf, was gute Arbeit auf jeder Ebene ausmacht, sowohl in deinem täglichen Einfluss als auch in deinem Verhalten.</li>
+  <li>So schaffen wir ein gemeinsames Verständnis davon, was wir voneinander erwarten können,</li>
+  <li>erleichtern interne Wechselmöglichkeiten und begleiten dich auf deinem persönlichen Entwicklungsweg bei Mister Spex.</li>
+</ul>`,
+      en: `<h3><strong>Key Principles:</strong></h3>
 
-  <p><strong>This approach:</strong> Fosters shared understanding, promotes internal mobility, and supports individual growth within Mister Spex.</p>`
-},
+<h4><strong>📈 Cumulative Expectations</strong></h4>
+<ul>
+  <li>Each higher level builds on previous ones</li>
+  <li>Includes all competencies and responsibilities from levels below</li>
+  <li>Greater autonomy and impact with advancement</li>
+</ul>
 
-        how: {
-          employee: {
-            de: `<p>Unsere Karrierematrix zeigt dir, was in deiner aktuellen Rolle erwartet wird und welche Möglichkeiten du hast, dich bei Mister Spex weiterzuentwickeln. Egal, ob du in deiner jetzigen Rolle weiter wachsen oder dich auf neue Herausforderungen vorbereiten möchtest.</p>
+<h4><strong>⚖️ Cross-Functional Consistency</strong></h4>
+<ul>
+  <li>Job levels aligned across all departments</li>
+  <li>Ensures fairness in development and progression</li>
+  <li>Consistent recognition across the organization</li>
+</ul>
+
+<h4><strong>🎯 Role vs. Title</strong></h4>
+<ul>
+  <li>Emphasizes core contribution and scope</li>
+  <li>Supports flexibility in role design</li>
+  <li>Maintains clear development paths</li>
+</ul>
+
+<h4><strong>🚀 Performance & Progression</strong></h4>
+<ul>
+  <li>Guides performance evaluations and promotions</li>
+  <li>Defines excellence at each level</li>
+  <li>Covers both impact and behavior</li>
+</ul>
+
+<p><strong>This approach:</strong> Fosters shared understanding, promotes internal mobility, and supports individual growth within Mister Spex.</p>`
+    },
+
+    how: {
+      employee: {
+        de: `<p>Unsere Karrierematrix zeigt dir, was in deiner aktuellen Rolle erwartet wird und welche Möglichkeiten du hast, dich bei Mister Spex weiterzuentwickeln. Egal, ob du in deiner jetzigen Rolle weiter wachsen oder dich auf neue Herausforderungen vorbereiten möchtest.</p>
 
 <p><strong>Du kannst sie als praktisches Werkzeug nutzen, um deine Entwicklung aktiv zu gestalten:</strong></p>
 
@@ -770,7 +790,7 @@ principles: {
   <li>und eine transparente Grundlage für Coaching, Anerkennung und Karriereentscheidungen.</li>
 </ul>
 <p><strong>Nutze in deinen Check-ins und Bewertungen beide Systeme: die globale Karrierematrix, um die Erwartungen zu verstehen, und die Kompetenzen, um zu zeigen, wie du sie im Alltag umsetzt. So kannst du deinen Fortschritt gezielt steuern und sichtbar machen.</strong></p>`,
-            en: `<p>The Matrix defines what's expected in your role and outlines how to grow at Mister Spex - whether you're focused on mastering your current position or preparing for new challenges.</p>
+        en: `<p>The Matrix defines what's expected in your role and outlines how to grow at Mister Spex - whether you're focused on mastering your current position or preparing for new challenges.</p>
 
 <p><strong>Use it to:</strong></p>
 
@@ -803,10 +823,10 @@ principles: {
   <li>a consistent basis for coaching, recognition, and career decisions.</li>
 </ul>
 <p><strong>In your check-ins and reviews, refer to both the Global Career Matrix and your Competencies to align your current work against the expectations set our in this framework.</strong></p>`
-          },
+      },
 
-          manager: {
-            de: `<h3><strong>Für Führungskräfte: So soll die Matrix benutzt werden</strong></h3>
+      manager: {
+        de: `<h3><strong>Für Führungskräfte: So soll die Matrix benutzt werden</strong></h3>
 <p>Die <strong>Global Career Matrix ist ein zentrales Führungsinstrument</strong> bei Mister Spex. Es wird von dir erwartet, sie aktiv und konsequent zu verwenden, um:</p>
 
 <ul>
@@ -817,33 +837,17 @@ principles: {
 
 <p>Diese Matrix ist keine optionale Orientierung – sie bildet die Grundlage dafür, wie wir Leistung und Wachstum definieren und beurteilen. Ihre konsequente Anwendung ist entscheidend, um Fairness, Transparenz und Vertrauen im gesamten Unternehmen zu gewährleisten.</p>
 
-<h4><strong>Verantwortlichkeiten von Führungskräften:</strong></h4>
+<h4><strong>Manager Responsibilities:</strong></h4>
 
 <h4><strong>1. Erwartungen klären</strong></h4>
 <p>Lege mit jedem Teammitglied klare, rollenbezogene Erwartungen fest – insbesondere beim Onboarding, nach Rollenwechseln oder bei Leistungsfragen. Nutze die Matrix, um zu definieren, was „gut" bedeutet in Bezug auf Eigenverantwortung, Zusammenarbeit und Denkweise auf dem jeweiligen Level.</p>
 
 <h4><strong>2. Faire Bewertung bei Leistungsbeurteilungen</strong></h4>
-<p>Die Matrix dient als Hauptreferenz bei den <strong>halbjährlichen Check-ins und den jährlichen Leistungsbeurteilungen.</strong> Bewerte beobachtetes Verhalten und erzielte Ergebnisse anhand der Level-Definitionen – nicht nach persönlichen Eindrücken oder Vergleichen mit anderen. Das ist entscheidend, um Vorurteile zu minimieren und einen fairen, transparenten Bewertungsprozess zu schaffen.</p>
-
-<p>🗓️ Beim Halbjahres-Check-in: Überprüfe mit der Matrix den Fortschritt hinsichtlich der Erwartungen, erkenne Stärken an und bespreche die Entwicklungsfelder. Setze die Ziele basierend auf der Sprache der Matrix.</p>
-
-<p>🗓️ Beim Jahresgespräch: Bewerte die Gesamtleistung zum Jahresende anhand der Level-Definitionen. Nutze diese Einschätzung für Entscheidungen zu Anerkennung, Beförderungsreife oder notwendigen Entwicklungsmaßnahmen.</p>
+<p>Die Matrix dient als Hauptreferenz bei den <strong>halbjährlichen Check-ins und den jährlichen Leistungsbeurteilungen.</strong> Bewerte beobachtetes Verhalten und erzielte Ergebnisse anhand der Level-Definitionen – nicht nach persönlichen Eindrücken oder Vergleichen mit anderen.</p>
 
 <h4><strong>3. Entwicklungsgespräche führen</strong></h4>
-<p>Vergleiche regelmäßig die aktuelle Leistung deiner Teammitglieder mit der Matrix, um Entwicklungslücken zu identifizieren. Wenn jemand sein aktuelles Level übertrifft, bestimme genau, was noch für den nächsten Schritt fehlt – und mache daraus einen Entwicklungsplan.</p>
-
-<h4><strong>4. Konsistente Entscheidungen zur Weiterentwicklung treffen</strong></h4>
-<p>Alle Entscheidungen zu Beförderungen, Titeländerungen oder Neueinstufungen müssen auf der Matrix basieren. Leistung allein reicht nicht – die Person muss die Erwartungen in Denkweise, Verhalten und Wirkung erfüllen. Die Nutzung der Matrix hilft, subjektive Verzerrungen zu vermeiden, sorgt für Konsistenz und stärkt das Vertrauen in unsere internen Entwicklungsprozesse.</p>
-
-<h4><strong>5. Klar und gezielt coachen</strong></h4>
-<p>Beziehe dich bei Feedback oder Zielvereinbarungen direkt auf die Matrix. Sie bietet eine klare, gemeinsame Definition von Erwartungen und ermöglicht es Teammitgliedern, Feedback konkret und umsetzbar zu verstehen.</p>
-
-<h4><strong>6. Verschiedene Entwicklungspfade anerkennen</strong></h4>
-<p>Hebe hervor, dass Mister Spex sowohl Expertenkarrieren als auch Führungskarrieren wertschätzt. Nutze die Matrix, um individuelle Entwicklung gezielt zu fördern und sicherzustellen, dass Anerkennung und Aufstieg den tatsächlichen Beitrag widerspiegeln – nicht nur Teamgröße oder Sichtbarkeit.</p>
-
-<h4><strong>7. Vorurteile minimieren</strong></h4>
-<p>Die Matrix ist ein zentrales Instrument zur Förderung von Chancengleichheit. Nutze sie einheitlich für das gesamte Team – unabhängig von Persönlichkeit, Hintergrund oder Arbeitsstil. Vermeide Annahmen oder informelle Vergleiche. Wenn jemand die Erwartungen nicht erfüllt, benenne konkret, welche Verhaltensweisen fehlen, und führe das Gespräch konstruktiv, basierend auf der Matrix.</p>`,
-            en: `<h3><strong>For Managers: How You Are Expected to Use This Matrix</strong></h3>
+<p>Vergleiche regelmäßig die aktuelle Leistung deiner Teammitglieder mit der Matrix, um Entwicklungslücken zu identifizieren.</p>`,
+        en: `<h3><strong>For Managers: How You Are Expected to Use This Matrix</strong></h3>
 <p>The <strong>Global Career Matrix is a core management tool</strong> at Mister Spex. You are expected to use it actively and consistently to:</p>
 
 <ul>
@@ -852,7 +856,12 @@ principles: {
   <li><strong>make fair, evidence-based, and bias-resistant decisions</strong> on progression, recognition, and promotion.</li>
 </ul>
 
-<p>This matrix is not optional guidance — it is the foundation for how we define and assess performance and growth. Its consistent use is essential to ensure fairness, transparency, and trust across the company.</p>
+<p>This matrix is not optional guidance — it is the foundation for how we define and assess performance and growth.</p>`
+      }
+    }
+  };
+</script>
+ optional guidance — it is the foundation for how we define and assess performance and growth. Its consistent use is essential to ensure fairness, transparency, and trust across the company.</p>
 
 <h4><strong>Manager Responsibilities:</strong></h4>
 
@@ -1333,4 +1342,5 @@ principles: {
     </script>
   </body>
 </html>
+
 
